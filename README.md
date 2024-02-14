@@ -12,26 +12,26 @@
 </p>
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/walshyb/catpuccin-latex/main/assets/preview.webp"/>
+	<img src="https://raw.githubusercontent.com/walshyb/catppuccin-latex/main/assets/preview.webp"/>
 </p>
 
 ## Previews
 
 <details>
 <summary>🌻 Latte</summary>
-<img src="https://raw.githubusercontent.com/walshyb/catppuccin/main/assets/latte.webp"/>
+<img src="https://raw.githubusercontent.com/walshyb/catppuccin-latex/main/assets/latte.webp"/>
 </details>
 <details>
 <summary>🪴 Frappé</summary>
-<img src="https://raw.githubusercontent.com/walshyb/catppuccin/main/assets/frappe.webp"/>
+<img src="https://raw.githubusercontent.com/walshyb/catppuccin-latex/main/assets/frappe.webp"/>
 </details>
 <details>
 <summary>🌺 Macchiato</summary>
-<img src="https://raw.githubusercontent.com/walshyb/catppuccin/main/assets/macchiato.webp"/>
+<img src="https://raw.githubusercontent.com/walshyb/catppuccin-latex/main/assets/macchiato.webp"/>
 </details>
 <details>
 <summary>🌿 Mocha</summary>
-<img src="https://raw.githubusercontent.com/walshyb/catppuccin/main/assets/mocha.webp"/>
+<img src="https://raw.githubusercontent.com/walshyb/catppuccin-latex/main/assets/mocha.webp"/>
 </details>
 
 ## Usage
