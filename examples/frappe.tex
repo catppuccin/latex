@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+
+% Imports the catppuccino frappe theme
+% from the directory above. Actual implementation
+% wouldn't need the import package unless the theme
+% and the document are in different directories.
+\usepackage{import}
+\import{../}{catppuccin_frappe.sty}
+
+% Removes padding above title
+\usepackage{titling}
+\setlength{\droptitle}{-10em}
+
+% Margin package
+\usepackage[margin=1.5in]{geometry}
+
+% Font package
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+
+% Code snippets package
+\usepackage{listings}
+% Add code highlighting specific for my Ruby on Rails snippet
+% You'd want to follow something similar below to add your own keyword highlighting
+\lstdefinestyle{ruby_on_rails}{
+  language={Ruby},
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  stringstyle = {\color{frappeGreen}},
+  commentstyle={\color{frappeOverlay1}},
+  basicstyle = {\small\color{frappeText}\ttfamily},
+  keywordstyle = {\color{frappeMauve}},
+  keywordstyle = [2]{\color{frappeBlue}},
+  keywordstyle = [3]{\color{frappeYellow}},
+  keywordstyle = [4]{\color{frappeLavender}},
+  keywordstyle = [5]{\color{frappePeach}},
+  keywordstyle = [6]{\color{frappeTeal}},
+  otherkeywords = {<, ||, =, ?},
+  morekeywords = [2]{new, create, present, email, description, creator, protect_from_forgery, before_action},
+  morekeywords = [3]{PageController, ApplicationController, Page},
+  morekeywords = [4]{@page},
+  morekeywords = [5]{exception, do_some_for_pages, @page, @admin},
+  morekeywords = [6]{<, ||, =, ?},
+}
+
+% Set the title and author, utilizing frappePink
+\title{ \Huge \textbf{\textcolor{frappePink}{Catppuccin Frappe Theme for} \textcolor{frappeLavender}{\LaTeX{} Documents}} \vspace{-3em}}
+\date{}
+
+% Start our dock
+\begin{document}
+
+\maketitle
+
+\section{\textcolor{frappeSky}{Simple Paragraph}}
+\textcolor{frappeYellow}{This is what a simple paragraph looks like.} You can see that all the colors in this pallet complement each other and maintain an elegance all within the same proximity. The default text color is called \textbf{\textcolor{frappeGreen}{frappeText}} while the background color is called \textbf{\textcolor{frappeGreen}{frappeBase}}.
+
+\section{\textcolor{frappeSky}{Math}}
+
+You even can make math formulas, equations, and examples look nicer and more legible:
+
+
+\[\large{
+    \textcolor{frappeBlue}{\lim_{{n \to \infty}} \textcolor{frappePeach}{\int_{\textcolor{frappeRed}{a}}^{\textcolor{frappeRed}{b}} \frac{\textcolor{frappeGreen}{\sin}(\textcolor{frappeYellow}{nx})}{\textcolor{frappeYellow}{x}} \, \textcolor{frappeTeal}{dx}}}
+}\]
+
+\tiny{(Or just color dump like I did)}
+
+\section{\textcolor{frappeSky}{Code Snippets}}
+
+\begin{lstlisting}[language=Ruby,style=ruby_on_rails, caption={A ruby on rails code sample}]
+class PageController < ApplicationController
+  protect_from_forgery with: :exception
+  before_action :do_some_for_pages
+
+  '''
+  This action creates a new page
+  '''
+  def new
+    @page = Page.new
+    creator = current_user || @admin
+
+    # Check if a creator is present
+    if creator.present?
+      @page.creator = creator.email
+    end
+
+    @page.description = 'This is the default description'
+  end
+end
+\end{lstlisting}
+
+\end{document}
+
+
