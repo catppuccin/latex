@@ -20,7 +20,9 @@
 
 % Code snippets package
 \usepackage{listings}
-\lstdefinestyle{mystyle}{
+% Add code highlighting specific for my Ruby on Rails snippet
+% You'd want to follow something similar below to add your own keyword highlighting
+\lstdefinestyle{ruby_on_rails}{
   language={Ruby},
   breaklines=true,
   showstringspaces=false,
@@ -67,7 +69,7 @@ You even can make math formulas, equations, and examples look nicer and more leg
 
 \section{\textcolor{mochaSky}{Code Snippets}}
 
-\begin{lstlisting}[language=Ruby,style=mystyle, caption={A ruby on rails code sample}]
+\begin{lstlisting}[language=Ruby,style=ruby_on_rails, caption={A ruby on rails code sample}]
 class PageController < ApplicationController
   protect_from_forgery with: :exception
   before_action :do_some_for_pages
