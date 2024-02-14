@@ -36,15 +36,33 @@
 
 ## Usage
 
+### Importing the theme file
+
+1. Download the respective `.sty` theme file that you'd like to use in your LaTeX document 
+2. Add it to the root of your LaTeX document
+3. Import the package by adding `\usepackage{catppuccin_THEME}`, replacing `THEME` with the flavor of your chose. i.e. `\usepackage{catppuccin_latte}`
+
+### Copying and Pasting
+
+If you'd like, you could also just copy the color definitions from the your desired `.sty` theme file. Ensure that you still require the `xcolor` package (`\usepackage{xcolor}`) and still bring in the `\pagecolor` and `\color` definitions.
+
+### Color Naming Conventions
+
+All [Catppuccin palette colors](https://github.com/catppuccin/catppuccin#-palette), across all flavors, follow the same naming convention. This theme set prefixes all Catppuccin colors with the flavor name, i.e. `frappePeach`, or `mochaBlue`. This allows for the inclusion of multiple flavors in a single LaTeX document; an example use case would be having code snippets use different syntax highlighting colorschemes.
+
+### Overriding Default Page and Text Colors
+If you wish to only utilize the themes for code snippets and not the document itself:
+1. If you are importing the package from its file, reset the default colors by adding the following after the import:
+```
+\pagecolor{white}
+\color{black}
+```
+2. If you copied and pasted `.sty` contents into your preamble, ensure that you omit the `\pagecolor` and `\color` definitions
+
+
 ## Inspiration
 
 Inspired by [Dracula's LaTeX theme](https://github.com/dracula/latex).
-
-<!-- this section is optional -->
-## 🙋 FAQ
-
--	Q: **_"Where can I find the doc?"_**\
-	A: Run `:help theme`
 
 ## 💝 Thanks to
 
