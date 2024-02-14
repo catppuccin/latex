@@ -1,0 +1,94 @@
+\documentclass[12pt]{article}
+
+% Imports the catppuccino mocha theme
+% from the directory above. Actual implementation
+% wouldn't need the import package unless the theme
+% and the document are in different directories.
+\usepackage{import}
+\import{../}{catppuccin_mocha.sty}
+
+% Removes padding above title
+\usepackage{titling}
+\setlength{\droptitle}{-10em}
+
+% Margin package
+\usepackage[margin=1.5in]{geometry}
+
+% Font package
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+
+% Code snippets package
+\usepackage{listings}
+\lstdefinestyle{mystyle}{
+  language={Ruby},
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  stringstyle = {\color{mochaGreen}},
+  commentstyle={\color{mochaOverlay1}},
+  basicstyle = {\small\color{mochaText}\ttfamily},
+  keywordstyle = {\color{mochaMauve}},
+  keywordstyle = [2]{\color{mochaBlue}},
+  keywordstyle = [3]{\color{mochaYellow}},
+  keywordstyle = [4]{\color{mochaLavender}},
+  keywordstyle = [5]{\color{mochaPeach}},
+  keywordstyle = [6]{\color{mochaTeal}},
+  otherkeywords = {<, ||, =, ?},
+  morekeywords = [2]{new, create, present, email, description, creator, protect_from_forgery, before_action},
+  morekeywords = [3]{PageController, ApplicationController, Page},
+  morekeywords = [4]{@page},
+  morekeywords = [5]{exception, do_some_for_pages, @page, @admin},
+  morekeywords = [6]{<, ||, =, ?},
+}
+
+% Set the title and author, utilizing mochaPink
+\title{ \Huge \textbf{\textcolor{mochaPink}{Catppuccin Mocha Theme for} \textcolor{mochaLavender}{\LaTeX{} Documents}} \vspace{-3em}}
+\date{}
+
+% Start our dock
+\begin{document}
+
+\maketitle
+
+\section{\textcolor{mochaSky}{Simple Paragraph}}
+\textcolor{mochaYellow}{This is what a simple paragraph looks like.} You can see that all the colors in this pallet complement each other and maintain an elegance all within the same proximity. The default text color is called \textbf{\textcolor{mochaGreen}{mochaText}} while the background color is called \textbf{\textcolor{mochaGreen}{mochaBase}}.
+
+\section{\textcolor{mochaSky}{Math}}
+
+You even can make math formulas, equations, and examples look nicer and more legible:
+
+
+\[\large{
+    \textcolor{mochaBlue}{\lim_{{n \to \infty}} \textcolor{mochaPeach}{\int_{\textcolor{mochaRed}{a}}^{\textcolor{mochaRed}{b}} \frac{\textcolor{mochaGreen}{\sin}(\textcolor{mochaYellow}{nx})}{\textcolor{mochaYellow}{x}} \, \textcolor{mochaTeal}{dx}}}
+}\]
+
+\tiny{(Or just color dump like I did)}
+
+\section{\textcolor{mochaSky}{Code Snippets}}
+
+\begin{lstlisting}[language=Ruby,style=mystyle, caption={A ruby on rails code sample}]
+class PageController < ApplicationController
+  protect_from_forgery with: :exception
+  before_action :do_some_for_pages
+
+  '''
+  This #new action creates a new page object and sets the
+  '''
+  def new
+    @page = Page.new
+    creator = current_user || @admin
+
+    # Check if a creator is present
+    if creator.present?
+      @page.creator = creator.email
+    end
+
+    @page.description = 'This is the default description'
+  end
+end
+\end{lstlisting}
+
+\end{document}
+
+
