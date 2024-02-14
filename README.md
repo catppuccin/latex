@@ -59,6 +59,10 @@ If you wish to only utilize the themes for code snippets and not the document it
 ```
 2. If you copied and pasted `.sty` contents into your preamble, ensure that you omit the `\pagecolor` and `\color` definitions
 
+### Examples
+
+Please refer to the [examples](https://github.com/walshyb/catppuccin-latex/tree/main/examples) for sample demonstrations on theme usage across various document scenarios.
+
 
 ## Inspiration
 
