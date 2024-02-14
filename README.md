@@ -61,7 +61,7 @@ If you wish to only utilize the themes for code snippets and not the document it
 
 ### Examples
 
-Please refer to the [examples](https://github.com/walshyb/catppuccin-latex/tree/main/examples) for full demonstrations on theme usage and code highlighting.
+Please refer to the [examples](https://github.com/walshyb/catppuccin-latex/tree/main/examples) for full demonstrations, with LaTeX sources and their outputs, on theme usage and code highlighting.
 
 
 ## Inspiration
