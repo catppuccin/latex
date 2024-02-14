@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+
+% Imports the catppuccino latte theme
+% from the directory above. Actual implementation
+% wouldn't need the import package unless the theme
+% and the document are in different directories.
+\usepackage{import}
+\import{../}{catppuccin_latte.sty}
+
+% Removes padding above title
+\usepackage{titling}
+\setlength{\droptitle}{-10em}
+
+% Margin package
+\usepackage[margin=1.5in]{geometry}
+
+% Font package
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+
+% Code snippets package
+\usepackage{listings}
+% Add code highlighting specific for my Ruby on Rails snippet
+% You'd want to follow something similar below to add your own keyword highlighting
+\lstdefinestyle{ruby_on_rails}{
+  language={Ruby},
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  stringstyle = {\color{latteGreen}},
+  commentstyle={\color{latteOverlay1}},
+  basicstyle = {\small\color{latteText}\ttfamily},
+  keywordstyle = {\color{latteMauve}},
+  keywordstyle = [2]{\color{latteBlue}},
+  keywordstyle = [3]{\color{lattePeach}},
+  keywordstyle = [4]{\color{latteLavender}},
+  keywordstyle = [5]{\color{latteMaroon}},
+  keywordstyle = [6]{\color{latteTeal}},
+  otherkeywords = {<, ||, =, ?},
+  morekeywords = [2]{new, create, present, email, description, creator, protect_from_forgery, before_action},
+  morekeywords = [3]{PageController, ApplicationController, Page},
+  morekeywords = [4]{@page},
+  morekeywords = [5]{exception, do_some_for_pages, @page, @admin},
+  morekeywords = [6]{<, ||, =, ?},
+}
+
+% Set the title and author, utilizing lattePink
+\title{ \Huge \textbf{\textcolor{latteMaroon}{Catppuccin Latte Theme for} \textcolor{latteMauve}{\LaTeX{} Documents}} \vspace{-3em}}
+\date{}
+
+% Start our dock
+\begin{document}
+
+\maketitle
+
+\section{\textcolor{latteBlue}{Simple Paragraph}}
+\textcolor{lattePeach}{This is what a simple paragraph looks like.} You can see that all the colors in this pallet complement each other and maintain an elegance all within the same proximity. The default text color is called \textbf{\textcolor{latteGreen}{latteText}} while the background color is called \textbf{\textcolor{latteGreen}{latteBase}}.
+
+\section{\textcolor{latteBlue}{Math}}
+
+You even can make math formulas, equations, and examples look nicer and more legible:
+
+
+\[\large{
+    \textcolor{latteBlue}{\lim_{{n \to \infty}} \textcolor{lattePeach}{\int_{\textcolor{latteRed}{a}}^{\textcolor{latteRed}{b}} \frac{\textcolor{latteGreen}{\sin}(\textcolor{lattePeach}{nx})}{\textcolor{lattePeach}{x}} \, \textcolor{latteTeal}{dx}}}
+}\]
+
+\tiny{(Or just color dump like I did)}
+
+\section{\textcolor{latteBlue}{Code Snippets}}
+
+\begin{lstlisting}[language=Ruby,style=ruby_on_rails, caption={A ruby on rails code sample}]
+class PageController < ApplicationController
+  protect_from_forgery with: :exception
+  before_action :do_some_for_pages
+
+  '''
+  This #new action creates a new page object and sets the
+  '''
+  def new
+    @page = Page.new
+    creator = current_user || @admin
+
+    # Check if a creator is present
+    if creator.present?
+      @page.creator = creator.email
+    end
+
+    @page.description = 'This is the default description'
+  end
+end
+\end{lstlisting}
+
+\end{document}
+
+
