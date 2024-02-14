@@ -52,7 +52,7 @@ All [Catppuccin palette colors](https://github.com/catppuccin/catppuccin#-palett
 
 ### Overriding Default Page and Text Colors
 If you wish to only utilize the themes for code snippets and not the document itself:
-1. If you are importing the package from its file, reset the default colors by adding the following after the import:
+1. If you are importing the package from its `.sty` file, reset the default colors by adding the following after the package import:
 ```
 \pagecolor{white}
 \color{black}
@@ -61,7 +61,7 @@ If you wish to only utilize the themes for code snippets and not the document it
 
 ### Examples
 
-Please refer to the [examples](https://github.com/walshyb/catppuccin-latex/tree/main/examples) for sample demonstrations on theme usage across various document scenarios.
+Please refer to the [examples](https://github.com/walshyb/catppuccin-latex/tree/main/examples) for full demonstrations on theme usage and code highlighting.
 
 
 ## Inspiration
