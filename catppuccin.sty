@@ -2,33 +2,41 @@
 \ProvidesPackage{catppuccin}[2024/02/13 Catppuccin theme for LaTeX documents]
 \RequirePackage{xcolor}
 
+\newcommand{\mocha}{
+  \definecolor{ctpRosewater} {RGB} {245, 224, 220}	
+  \definecolor{ctpFlamingo}  {RGB} {242, 205, 205}	
+  \definecolor{ctpPink}      {RGB} {245, 194, 231}	
+  \definecolor{ctpMauve}     {RGB} {203, 166, 247}	
+  \definecolor{ctpRed}       {RGB} {243, 139, 168}	
+  \definecolor{ctpMaroon}    {RGB} {235, 160, 172}	
+  \definecolor{ctpPeach}     {RGB} {250, 179, 135}	
+  \definecolor{ctpYellow}    {RGB} {249, 226, 175}	
+  \definecolor{ctpGreen}     {RGB} {166, 227, 161}	
+  \definecolor{ctpTeal}      {RGB} {148, 226, 213}	
+  \definecolor{ctpSky}       {RGB} {137, 220, 235}	
+  \definecolor{ctpSapphire}  {RGB} {116, 199, 236}	
+  \definecolor{ctpBlue}      {RGB} {137, 180, 250}	
+  \definecolor{ctpLavender}  {RGB} {180, 190, 254}	
+  \definecolor{ctpText}      {RGB} {205, 214, 244}	
+  \definecolor{ctpSubtext1}  {RGB} {186, 194, 222} 
+  \definecolor{ctpSubtext0}  {RGB} {166, 173, 200}	
+  \definecolor{ctpOverlay2}  {RGB} {147, 153, 178}	
+  \definecolor{ctpOverlay1}  {RGB} {127, 132, 156}	
+  \definecolor{ctpOverlay0}  {RGB} {108, 112, 134}	
+  \definecolor{ctpSurface2}  {RGB} {88, 91, 112}	
+  \definecolor{ctpSurface1}  {RGB} {69, 71, 90}	
+  \definecolor{ctpSurface0}  {RGB} {49, 50, 68}	
+  \definecolor{ctpBase}      {RGB} {30, 30, 46}	
+  \definecolor{ctpMantle}    {RGB} {24, 24, 37}	
+  \definecolor{ctpCrust}     {RGB} {17, 17, 27}	
+}
+
 % Define mocha flavor colors as the default
-\definecolor{ctpRosewater} {RGB} {245, 224, 220}	
-\definecolor{ctpFlamingo}  {RGB} {242, 205, 205}	
-\definecolor{ctpPink}      {RGB} {245, 194, 231}	
-\definecolor{ctpMauve}     {RGB} {203, 166, 247}	
-\definecolor{ctpRed}       {RGB} {243, 139, 168}	
-\definecolor{ctpMaroon}    {RGB} {235, 160, 172}	
-\definecolor{ctpPeach}     {RGB} {250, 179, 135}	
-\definecolor{ctpYellow}    {RGB} {249, 226, 175}	
-\definecolor{ctpGreen}     {RGB} {166, 227, 161}	
-\definecolor{ctpTeal}      {RGB} {148, 226, 213}	
-\definecolor{ctpSky}       {RGB} {137, 220, 235}	
-\definecolor{ctpSapphire}  {RGB} {116, 199, 236}	
-\definecolor{ctpBlue}      {RGB} {137, 180, 250}	
-\definecolor{ctpLavender}  {RGB} {180, 190, 254}	
-\definecolor{ctpText}      {RGB} {205, 214, 244}	
-\definecolor{ctpSubtext1}  {RGB} {186, 194, 222} 
-\definecolor{ctpSubtext0}  {RGB} {166, 173, 200}	
-\definecolor{ctpOverlay2}  {RGB} {147, 153, 178}	
-\definecolor{ctpOverlay1}  {RGB} {127, 132, 156}	
-\definecolor{ctpOverlay0}  {RGB} {108, 112, 134}	
-\definecolor{ctpSurface2}  {RGB} {88, 91, 112}	
-\definecolor{ctpSurface1}  {RGB} {69, 71, 90}	
-\definecolor{ctpSurface0}  {RGB} {49, 50, 68}	
-\definecolor{ctpBase}      {RGB} {30, 30, 46}	
-\definecolor{ctpMantle}    {RGB} {24, 24, 37}	
-\definecolor{ctpCrust}     {RGB} {17, 17, 27}	
+\mocha
+
+% Define mocha option to prevent error
+% when 'mocha' option is passed in
+\DeclareOption{mocha}{}
 
 \DeclareOption{latte}{
   \definecolor{ctpRosewater} {RGB} {220, 138, 120}	
