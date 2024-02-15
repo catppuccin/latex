@@ -38,9 +38,9 @@
 
 ### Importing the theme file
 
-1. Download the respective `.sty` theme file that you'd like to use in your LaTeX document 
-2. Add it to the root of your LaTeX document
-3. Import the package by adding `\usepackage[FLAVOR}{catppuccin}`, replacing `FLAVOR` with the flavor of your choice. i.e. `\usepackage[macchiato]{catppuccin}`. Valid options are: mocha (default), latte, frappe, and macchiato.
+1. Download the `.sty` theme file from this repository that you'd like to use in your LaTeX document 
+2. Add it to the root of your project, alongside your LaTeX document
+3. Import the package by adding `\usepackage[FLAVOR]{catppuccin}`, replacing `FLAVOR` with the flavor of your choice. i.e. `\usepackage[macchiato]{catppuccin}`. Valid options are: mocha (default), latte, frappe, and macchiato.
 
 ### Copying and Pasting
 
