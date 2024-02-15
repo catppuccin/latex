@@ -40,7 +40,7 @@
 
 1. Download the respective `.sty` theme file that you'd like to use in your LaTeX document 
 2. Add it to the root of your LaTeX document
-3. Import the package by adding `\usepackage{catppuccin_THEME}`, replacing `THEME` with the flavor of your chose. i.e. `\usepackage{catppuccin_latte}`
+3. Import the package by adding `\usepackage[FLAVOR}{catppuccin}`, replacing `FLAVOR` with the flavor of your choice. i.e. `\usepackage[macchiato]{catppuccin}`. Valid options are: mocha (default), latte, frappe, and macchiato.
 
 ### Copying and Pasting
 
@@ -48,7 +48,7 @@ If you'd like, you could also just copy the color definitions from the your desi
 
 ### Color Naming Conventions
 
-All [Catppuccin palette colors](https://github.com/catppuccin/catppuccin#-palette), across all flavors, follow the same naming convention. This theme set prefixes all Catppuccin colors with the flavor name, i.e. `frappePeach`, or `mochaBlue`. This allows for the inclusion of multiple flavors in a single LaTeX document; an example use case would be having code snippets use different syntax highlighting colorschemes.
+All [Catppuccin palette colors](https://github.com/catppuccin/catppuccin#-palette), across all flavors, follow the same naming convention. This theme set prefixes all Catppuccin colors with `ctp`, i.e. `ctpPeach`, or `ctpBlue`. 
 
 ### Overriding Default Page and Text Colors
 If you wish to only utilize the themes for code snippets and not the document itself:
