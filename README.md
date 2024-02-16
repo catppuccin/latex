@@ -6,32 +6,32 @@
 </h3>
 
 <p align="center">
-  <a href="https://github.com/walshyb/catppuccin-latex/stargazers"><img src="https://img.shields.io/github/stars/walshyb/catppuccin-latex?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
-  <a href="https://github.com/walshyb/catppuccin-latex/issues"><img src="https://img.shields.io/github/issues/walshyb/catppuccin-latex?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
-  <a href="https://github.com/walshyb/catppuccin-latex/contributors"><img src="https://img.shields.io/github/contributors/walshyb/catppuccin-latex?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+  <a href="https://github.com/catppuccin/latex/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/latex?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+  <a href="https://github.com/catppuccin/latex/issues"><img src="https://img.shields.io/github/issues/catppuccin/latex?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+  <a href="https://github.com/catppuccin/latex/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/latex?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/walshyb/catppuccin-latex/main/assets/preview.webp"/>
+	<img src="https://raw.githubusercontent.com/catppuccin/latex/main/assets/preview.webp"/>
 </p>
 
 ## Previews
 
 <details>
 <summary>🌻 Latte</summary>
-<img src="https://raw.githubusercontent.com/walshyb/catppuccin-latex/main/assets/latte.webp"/>
+<img src="https://raw.githubusercontent.com/catppuccin/latex/main/assets/latte.webp"/>
 </details>
 <details>
 <summary>🪴 Frappé</summary>
-<img src="https://raw.githubusercontent.com/walshyb/catppuccin-latex/main/assets/frappe.webp"/>
+<img src="https://raw.githubusercontent.com/catppuccin/latex/main/assets/frappe.webp"/>
 </details>
 <details>
 <summary>🌺 Macchiato</summary>
-<img src="https://raw.githubusercontent.com/walshyb/catppuccin-latex/main/assets/macchiato.webp"/>
+<img src="https://raw.githubusercontent.com/catppuccin/latex/main/assets/macchiato.webp"/>
 </details>
 <details>
 <summary>🌿 Mocha</summary>
-<img src="https://raw.githubusercontent.com/walshyb/catppuccin-latex/main/assets/mocha.webp"/>
+<img src="https://raw.githubusercontent.com/catppuccin/latex/main/assets/mocha.webp"/>
 </details>
 
 ## Usage
@@ -61,7 +61,7 @@ If you wish to only utilize the themes for code snippets and not the document it
 
 ### Examples
 
-Please refer to the [examples](https://github.com/walshyb/catppuccin-latex/tree/main/examples) for full demonstrations, with LaTeX sources and their outputs, on theme usage and code highlighting.
+Please refer to the [examples](https://github.com/catppuccin/latex/tree/main/examples) for full demonstrations, with LaTeX sources and their outputs, on theme usage and code highlighting.
 
 
 ## Inspiration
