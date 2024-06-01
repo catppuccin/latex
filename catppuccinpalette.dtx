@@ -209,23 +209,24 @@
 % Define the package option keys
 %    \begin{macrocode}
 	Latte/.style={style=Latte},
-	latte/.style={style=latte},
+	latte/.style={style=Latte},
 	Frappe/.style={style=Frappe},
-	frappe/.style={style=frappe},
+	frappe/.style={style=Frappe},
 	Macchiato/.style={style=Macchiato},
-	macchiato/.style={style=macchiato},
+	macchiato/.style={style=Macchiato},
 	Mocha/.style={style=Mocha},
-	mocha/.style={style=mocha},
+	mocha/.style={style=Mocha},
 	style/.is choice,
 	style/.value required,
 	style/Latte/.code = {\def\catppuccinpalette@style{Latte}},
-	style/latte/.forward to = /catppuccinPalette/style/Latte,
+	style/latte/.style = {style=Latte},
 	style/Frappe/.code = {\def\catppuccinpalette@style{Frappe}},
+	style/frappe/.style = {style=Frappe},
 	style/frappe/.forward to = /catppuccinPalette/style/frappe,
 	style/Macchiato/.code = {\def\catppuccinpalette@style{Macchiato}},
-	style/macchiato/.forward to = /catppuccinPalette/style/Macchiato,
+	style/macchiato/.style = {style=Macchiato},
 	style/Mocha/.code = {\def\catppuccinpalette@style{Mocha}},
-	style/mocha/.forward to = /catppuccinPalette/style/Mocha,
+	style/mocha/.style = {style=Mocha},
 	textcolor/.is if = catppuccinpalette@textcolor,
 	textcolor/.default = true,
 	pagecolor/.is if = catppuccinpalette@pagecolor,
@@ -238,7 +239,7 @@
 	pagecolor = false,
 	style = Latte,
 }
-\ProcessPgfOptions*
+\ProcessPgfOptions{catppuccinPalette}
 %    \end{macrocode}
 % Define the \emph{Latte} colorset
 %    \begin{macrocode}
