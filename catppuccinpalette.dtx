@@ -116,7 +116,12 @@
 %   \verb|style| &
 %   set the style used by the shortened prefix (\verb|Ctp|). Possible values:
 %   \verb|Latte| (default+initial), \verb|latte|, \verb|Frappe|, \verb|frappe|,
-%   \verb|Mocha|, \verb|mocha|
+%   \verb|Mocha|, \verb|mocha|, \verb|Macchiato|, \verb|macchiato|
+%   \\
+%   &
+%   As a shortcut, you can also just use e.\,g.\,
+%   |\usepackage[latte]{catppuccinPalette}| as a shorthand for
+%   |\usepackage[style=latte]{catppuccinPalette}|
 %   \\
 %   \verb|textcolor| &
 %   set the default textcolor of the document to \verb|CtpText|. Possible values:
@@ -203,6 +208,14 @@
 %    \end{macrocode}
 % Define the package option keys
 %    \begin{macrocode}
+	Latte/.style={style=Latte},
+	latte/.style={style=latte},
+	Frappe/.style={style=Frappe},
+	frappe/.style={style=frappe},
+	Macchiato/.style={style=Macchiato},
+	macchiato/.style={style=macchiato},
+	Mocha/.style={style=Mocha},
+	mocha/.style={style=mocha},
 	style/.is choice,
 	style/.value required,
 	style/Latte/.code = {\def\catppuccinpalette@style{Latte}},
