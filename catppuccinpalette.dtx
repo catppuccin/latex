@@ -527,7 +527,7 @@
 \colorlet{CtpMochaError}{CtpMochaRed}
 
 %    \end{macrocode}
-% Define shortcuts for active style
+% Define shortcuts for active style (legacy pert)
 %    \begin{macrocode}
 \colorlet{CatRosewater}{Ctp\catppuccinpalette@style Rosewater}
 \colorlet{CatFlamingo}{Ctp\catppuccinpalette@style Flamingo}
@@ -561,49 +561,64 @@
 \colorlet{CatWarning}{Ctp\catppuccinpalette@style Yellow}
 \colorlet{CatError}{Ctp\catppuccinpalette@style Red}
 
-\colorlet{CtpRosewater}{Ctp\catppuccinpalette@style Rosewater}
-\colorlet{CtpFlamingo}{Ctp\catppuccinpalette@style Flamingo}
-\colorlet{CtpPink}{Ctp\catppuccinpalette@style Pink}
-\colorlet{CtpMauve}{Ctp\catppuccinpalette@style Mauve}
-\colorlet{CtpRed}{Ctp\catppuccinpalette@style Red}
-\colorlet{CtpMaroon}{Ctp\catppuccinpalette@style Maroon}
-\colorlet{CtpPeach}{Ctp\catppuccinpalette@style Peach}
-\colorlet{CtpYellow}{Ctp\catppuccinpalette@style Yellow}
-\colorlet{CtpGreen}{Ctp\catppuccinpalette@style Green}
-\colorlet{CtpTeal}{Ctp\catppuccinpalette@style Teal}
-\colorlet{CtpSky}{Ctp\catppuccinpalette@style Sky}
-\colorlet{CtpSapphire}{Ctp\catppuccinpalette@style Sapphire}
-\colorlet{CtpBlue}{Ctp\catppuccinpalette@style Blue}
-\colorlet{CtpLavender}{Ctp\catppuccinpalette@style Lavender}
-\colorlet{CtpText}{Ctp\catppuccinpalette@style Text}
-\colorlet{CtpSubtext1}{Ctp\catppuccinpalette@style Subtext1}
-\colorlet{CtpSubtext0}{Ctp\catppuccinpalette@style Subtext0}
-\colorlet{CtpOverlay2}{Ctp\catppuccinpalette@style Overlay2}
-\colorlet{CtpOverlay1}{Ctp\catppuccinpalette@style Overlay1}
-\colorlet{CtpOverlay0}{Ctp\catppuccinpalette@style Overlay0}
-\colorlet{CtpSurface2}{Ctp\catppuccinpalette@style Surface2}
-\colorlet{CtpSurface1}{Ctp\catppuccinpalette@style Surface1}
-\colorlet{CtpSurface0}{Ctp\catppuccinpalette@style Surface0}
-\colorlet{CtpBase}{Ctp\catppuccinpalette@style Base}
-\colorlet{CtpMantle}{Ctp\catppuccinpalette@style Mantle}
-\colorlet{CtpCrust}{Ctp\catppuccinpalette@style Crust}
-\colorlet{CtpBackground}{Ctp\catppuccinpalette@style Base}
-\colorlet{CtpLink}{Ctp\catppuccinpalette@style Blue}
-\colorlet{CtpSuccess}{Ctp\catppuccinpalette@style Green}
-\colorlet{CtpWarning}{Ctp\catppuccinpalette@style Yellow}
-\colorlet{CtpError}{Ctp\catppuccinpalette@style Red}
 %    \end{macrocode}
-% Set (only initial) pagecolor according to the style guide if the user wants this
+% New command which parses the same options like the package. Can be used to e.\,g.\, reset/reinit the selected style.
 %    \begin{macrocode}
-\ifcatppuccinpalette@pagecolor
-	\pagecolor{CtpBackground}
-\fi
+\NewDocumentCommand\CtpReinit{O{}}{%
+	\pgfkeys{%
+		/catppuccinPalette/.cd,%
+		#1%
+	}%
+%    \end{macrocode}
+% Define shortcuts for active style
+%    \begin{macrocode}
+	\colorlet{CtpRosewater}{Ctp\catppuccinpalette@style Rosewater}%
+	\colorlet{CtpFlamingo}{Ctp\catppuccinpalette@style Flamingo}%
+	\colorlet{CtpPink}{Ctp\catppuccinpalette@style Pink}%
+	\colorlet{CtpMauve}{Ctp\catppuccinpalette@style Mauve}%
+	\colorlet{CtpRed}{Ctp\catppuccinpalette@style Red}%
+	\colorlet{CtpMaroon}{Ctp\catppuccinpalette@style Maroon}%
+	\colorlet{CtpPeach}{Ctp\catppuccinpalette@style Peach}%
+	\colorlet{CtpYellow}{Ctp\catppuccinpalette@style Yellow}%
+	\colorlet{CtpGreen}{Ctp\catppuccinpalette@style Green}%
+	\colorlet{CtpTeal}{Ctp\catppuccinpalette@style Teal}%
+	\colorlet{CtpSky}{Ctp\catppuccinpalette@style Sky}%
+	\colorlet{CtpSapphire}{Ctp\catppuccinpalette@style Sapphire}%
+	\colorlet{CtpBlue}{Ctp\catppuccinpalette@style Blue}%
+	\colorlet{CtpLavender}{Ctp\catppuccinpalette@style Lavender}%
+	\colorlet{CtpText}{Ctp\catppuccinpalette@style Text}%
+	\colorlet{CtpSubtext1}{Ctp\catppuccinpalette@style Subtext1}%
+	\colorlet{CtpSubtext0}{Ctp\catppuccinpalette@style Subtext0}%
+	\colorlet{CtpOverlay2}{Ctp\catppuccinpalette@style Overlay2}%
+	\colorlet{CtpOverlay1}{Ctp\catppuccinpalette@style Overlay1}%
+	\colorlet{CtpOverlay0}{Ctp\catppuccinpalette@style Overlay0}%
+	\colorlet{CtpSurface2}{Ctp\catppuccinpalette@style Surface2}%
+	\colorlet{CtpSurface1}{Ctp\catppuccinpalette@style Surface1}%
+	\colorlet{CtpSurface0}{Ctp\catppuccinpalette@style Surface0}%
+	\colorlet{CtpBase}{Ctp\catppuccinpalette@style Base}%
+	\colorlet{CtpMantle}{Ctp\catppuccinpalette@style Mantle}%
+	\colorlet{CtpCrust}{Ctp\catppuccinpalette@style Crust}%
+	\colorlet{CtpBackground}{Ctp\catppuccinpalette@style Base}%
+	\colorlet{CtpLink}{Ctp\catppuccinpalette@style Blue}%
+	\colorlet{CtpSuccess}{Ctp\catppuccinpalette@style Green}%
+	\colorlet{CtpWarning}{Ctp\catppuccinpalette@style Yellow}%
+	\colorlet{CtpError}{Ctp\catppuccinpalette@style Red}%
+%    \end{macrocode}
+% Set pagecolor according to the style guide if the user wants this
+%    \begin{macrocode}
+\ifcatppuccinpalette@pagecolor%
+	\pagecolor{CtpBackground}%
+\fi%
 %    \end{macrocode}
 % Set textcolor according to the style guide if the user wants this
 %    \begin{macrocode}
-\ifcatppuccinpalette@textcolor
-	\color{CtpText}
-\fi
+\ifcatppuccinpalette@textcolor%
+	\color{CtpText}%
+\fi%
+%    \end{macrocode}
+%    \begin{macrocode}
+}
+\CtpReinit[]
 %    \end{macrocode}
 \endinput
 %
