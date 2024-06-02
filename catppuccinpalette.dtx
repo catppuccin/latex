@@ -142,6 +142,19 @@
 %   \\\bottomrule
 % \end{tabularx}
 %
+% \subsubsection{Change settings mid-document}
+% \DescribeMacro{\CtpReinit} |\CtpReinit[opts]|
+%
+% This command allows to reinitialize this package. All previous configuration
+% options will be kept. In particular this allows to change the active
+% style/flavor mid-document. Note that if you decided this package should
+% change the background color when loading the package and only do
+% |\CptReinit[style=<another style>]|, then the background color will also be
+% adjusted on reinitialization.
+%
+% The command processes the same options like the ones you can pass when
+% loading the package (see documentation above).
+%
 % \subsection{Colors}
 % \textbf{Note:} The colors with the prefix |Cat| are deprecated and will be removed in a future version!
 % \newcommand{\showCol}[1]{\raisebox{0.5ex}{\fcolorbox{black}{#1}{\hspace{1em}}} #1}
