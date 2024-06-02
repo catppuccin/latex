@@ -1,3 +1,8 @@
+Makefile
+TODO
+build/
+*zip
+
 .DS_Store
 *.aux
 *.fdb_latexmk
