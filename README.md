@@ -37,39 +37,26 @@
 ## Usage
 
 ### Importing the theme file
-
-1. Download the `.sty` theme file from this repository that you'd like to use in your LaTeX document 
-2. Add it to the root of your project, alongside your LaTeX document
-3. Import the package by adding `\usepackage[FLAVOR]{catppuccin}`, replacing `FLAVOR` with the flavor of your choice. i.e. `\usepackage[macchiato]{catppuccin}`. Valid options are: mocha (default), latte, frappe, and macchiato.
-
-### Copying and Pasting
-
-If you'd like, you could also just copy the color definitions from the your desired `.sty` theme file. Ensure that you still require the `xcolor` package (`\usepackage{xcolor}`) and still bring in the `\pagecolor` and `\color` definitions.
+1. At the moment this package is on CTAN, but probably not included in your texlive installation. As a result you have to install it manually:
+    - Shortcut: If you set up your local `texmf` you should be able to simply install by executing `make install` (this installs the package locally for the current user)
+    - If you don't like installing the package locally for the current user you might also execue `l3build unpack` and move the generated `.sty` file `build/unpacked/catppuccinpalette.sty` to the root directory of your project.
+    - If you don't have `l3build` available, you can also download the `simple sty file` artifact from the latest [workflow run](https://github.com/atticus-sullivan/catppuccinLatex/actions), unpack it, and move `.sty` file to your project root.
+2. Import the package by adding `\usepackage[FLAVOR]{catppuccinpalette}`, replacing `FLAVOR` with the flavor of your choice. i.e. `\usepackage[macchiato]{catppuccinpalette}`. Valid options are: mocha (default), latte, frappe, and macchiato.
+    - If you want the package not only to add color definitions, you can also pass `textcolor=true` and/or `pagecolor=true` to the `catppuccinpalette` package.
+    - Also note that in the pdf containing the documentation, the available options are described in more detail and also the defined colors are listed and shown.
 
 ### Color Naming Conventions
 
-All [Catppuccin palette colors](https://github.com/catppuccin/catppuccin#-palette), across all flavors, follow the same naming convention. This theme set prefixes all Catppuccin colors with `ctp`, i.e. `ctpPeach`, or `ctpBlue`. 
+All [Catppuccin palette colors](https://github.com/catppuccin/catppuccin#-palette), across all flavors, follow the same naming convention. This theme set prefixes all Catppuccin colors with `Ctp`, i.e. `CtpPeach`, or `CtpBlue`. 
 
-### Overriding Default Page and Text Colors
-If you wish to only utilize the themes for code snippets and not the document itself:
-1. If you are importing the package from its `.sty` file, reset the default colors by adding the following after the package import:
-```
-\pagecolor{white}
-\color{black}
-```
-2. If you copied and pasted `.sty` contents into your preamble, ensure that you omit the `\pagecolor` and `\color` definitions
 
 ### Examples
 
 Please refer to the [examples](https://github.com/catppuccin/latex/tree/main/examples) for full demonstrations, with LaTeX sources and their outputs, on theme usage and code highlighting.
 
-
-## Inspiration
-
-Inspired by [Dracula's LaTeX theme](https://github.com/dracula/latex).
-
 ## 💝 Thanks to
 
+- [Lukas](https://github.com/atticus-sullivan)
 - [Brandon](https://github.com/walshyb)
 
 &nbsp;
