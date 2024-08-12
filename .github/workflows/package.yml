@@ -25,3 +25,4 @@ jobs:
         name: ctan-package
         path: |
           catppuccinpalette-ctan.zip
+          build/unpacked/catppuccinpalette.sty
