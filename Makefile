@@ -3,7 +3,7 @@
 catppuccinpalette.pdf: catppuccinpalette.dtx
 	l3build doc
 
-build/unpack/catppuccinpalette.sty: catppuccinpalette.dtx
+build/unpacked/catppuccinpalette.sty: catppuccinpalette.dtx
 	l3build unpack
 
 clean:
