@@ -25,4 +25,10 @@ jobs:
         name: ctan-package
         path: |
           catppuccinpalette-ctan.zip
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v4.3.1
+      with:
+        name: simple sty file
+        path: |
           build/unpacked/catppuccinpalette.sty
