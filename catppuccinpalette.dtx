@@ -1,0 +1,642 @@
+% \iffalse meta-comment
+%
+% MIT License
+% 
+% Copyright (c) 2024 Catppuccin
+% 
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+% 
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+% 
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+%
+% \fi
+%
+% \iffalse
+%<*driver>
+\ProvidesFile{catppuccinpalette.dtx}
+%</driver>
+%<package>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+%<package>\ProvidesPackage{catppuccinpalette}
+%<*package>
+    [2024/08/13 v1.1.0 catppuccin xcolor palette]
+%</package>
+%
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage{catppuccinpalette}
+\usepackage{multicol}
+\usepackage{pgffor}
+\usepackage{tabularx, booktabs}
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+  \DocInput{catppuccinpalette.dtx}
+  \PrintChanges
+  \PrintIndex
+\end{document}
+%</driver>
+% \fi
+%
+% \CheckSum{111}
+%
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+%
+% \changes{v0.0.1}{2024/02/09}{Converted to DTX file}
+% \changes{v1.0.0}{2024/02/27}{First full release}
+% \changes{v1.0.1}{2024/05/19}{Make fit for CTAN}
+% \changes{v1.0.2}{2024/05/19}{Fix colors in documentation}
+% \changes{v1.1.0}{2024/08/13}{Move to / Merge with official catppuccin. Thereby deprecate colors with |Cat| prefix. Subject to removal in the future}
+%
+% \DoNotIndex{\newcommand,\newenvironment,\color,\colorlet,\def,\fi,\RequirePackage,\ProvidesPackage,\ProcessPgfOptions,\preparecolorset,\pgfkeys,\pagecolor,\newif,\NeedsTeXFormat}
+%
+% \providecommand*\pkg{\textsf}
+% \providecommand*{\url}{\texttt}
+% \GetFileInfo{catppuccinpalette.dtx}
+% \title{The \textsf{catppuccinPalette} package}
+% \author{Lukas Heindl \\ \url{oss.heindl+latex@protonmail.com} \\ \url{https://github.com/catppuccin/latex}}
+% \date{\fileversion~from \filedate}
+%
+% \maketitle
+%
+% \begin{abstract}
+% The LaTeX package \pkg{catppuccinPalette} provides new colors for xcolor.
+% \end{abstract}
+%
+% \section{Introduction}
+%
+% Catppuccin\footnote{\url{https://github.com/catppuccin/catppuccin}} is a nice
+% pastel theme in 4 flavours/styles (\emph{Latte}, \emph{Frapp\'e},
+% \emph{Macchiato}, \emph{Mocha}). This package defines these themes as xcolor
+% colors.
+%
+% \section{Usage}
+%
+% Load via |\usepackage{catppuccinpalette}|
+%
+% Just use the new colors (prefixed with \verb|Ctp<Style>|) like normal xcolors.
+% In addition to the usual colors of the palette, this package defines some
+% colors according to the
+% style guide\footnote{\url{https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md}}
+% for ease of use.
+%
+% This package also allows you to set a specific style which sets the shortened
+% color names (prefixed only with \verb|Ctp|) to the selected style (allows for
+% easy switching style) via the package option \verb|style|.
+%
+% This package loads xcolor (without options) so if you want to set some xcolor
+% options you should load xcolor before loading this package.
+%
+% \subsection{Package options}
+% \begin{tabularx}{\linewidth}{lX}
+%   \emph{Option} & \emph{Description}
+%   \\\toprule
+%   \verb|style| &
+%   set the style used by the shortened prefix (\verb|Ctp|). Possible values:
+%   \verb|Latte| (default+initial), \verb|latte|, \verb|Frappe|, \verb|frappe|,
+%   \verb|Mocha|, \verb|mocha|, \verb|Macchiato|, \verb|macchiato|
+%   \\
+%   &
+%   As a shortcut, you can also just use e.\,g.\,
+%   |\usepackage[latte]{catppuccinPalette}| as a shorthand for
+%   |\usepackage[style=latte]{catppuccinPalette}|
+%   \\
+%   \verb|textcolor| &
+%   set the default textcolor of the document to \verb|CtpText|. Possible values:
+%   \verb|false| (default+initial), \verb|true|
+%   \\
+%   \verb|pagecolor| &
+%   set the pagecolor of the document to \verb|CtpBackground|. Possible values:
+%   \verb|false| (default+initial), \verb|true|
+%   \\\midrule
+%   \verb|styleAll| &
+%   shortcut for setting \verb|pagecolor| and \verb|textcolor|
+%   \\\bottomrule
+% \end{tabularx}
+%
+% \subsubsection{Change settings mid-document}
+% \DescribeMacro{\CtpReinit} |\CtpReinit[opts]|
+%
+% This command allows to reinitialize this package. All previous configuration
+% options will be kept. In particular this allows to change the active
+% style/flavor mid-document. Note that if you decided this package should
+% change the background color when loading the package and only do
+% |\CptReinit[style=<another style>]|, then the background color will also be
+% adjusted on reinitialization.
+%
+% The command processes the same options like the ones you can pass when
+% loading the package (see documentation above).
+%
+% \subsection{Colors}
+% \textbf{Note:} The colors with the prefix |Cat| are deprecated and will be removed in a future version!
+% \newcommand{\showCol}[1]{\raisebox{0.5ex}{\fcolorbox{black}{#1}{\hspace{1em}}} #1}
+% \foreach \Style in {Latte,Frappe,Macchiato,Mocha}{
+% \subsubsection{Style \texttt{\Style}}
+% \begin{multicols}{2}
+%  \showCol{Ctp\Style Blue}\par
+%  \showCol{Ctp\Style Rosewater}\par
+%  \showCol{Ctp\Style Flamingo}\par
+%  \showCol{Ctp\Style Pink}\par
+%  \showCol{Ctp\Style Mauve}\par
+%  \showCol{Ctp\Style Red}\par
+%  \showCol{Ctp\Style Maroon}\par
+%  \showCol{Ctp\Style Peach}\par
+%  \showCol{Ctp\Style Yellow}\par
+%  \showCol{Ctp\Style Green}\par
+%  \showCol{Ctp\Style Teal}\par
+%  \showCol{Ctp\Style Sky}\par
+%  \showCol{Ctp\Style Sapphire}\par
+%  \showCol{Ctp\Style Blue}\par
+%  \showCol{Ctp\Style Lavender}\par
+%  \showCol{Ctp\Style Text}\par
+%  \showCol{Ctp\Style Subtext1}\par
+%  \showCol{Ctp\Style Subtext0}\par
+%  \showCol{Ctp\Style Overlay2}\par
+%  \showCol{Ctp\Style Overlay1}\par
+%  \showCol{Ctp\Style Overlay0}\par
+%  \showCol{Ctp\Style Surface2}\par
+%  \showCol{Ctp\Style Surface1}\par
+%  \showCol{Ctp\Style Surface0}\par
+%  \showCol{Ctp\Style Base}\par
+%  \showCol{Ctp\Style Mantle}\par
+%  \showCol{Ctp\Style Crust}\par
+% \end{multicols}
+%
+% Some basic colors according to the style guide:
+%
+% \begin{multicols}{2}
+% \showCol{Ctp\Style Background}\par
+% \showCol{Ctp\Style Link}\par
+% \phantom{}\par
+% \columnbreak
+% \showCol{Ctp\Style Success}\par
+% \showCol{Ctp\Style Warning}\par
+% \showCol{Ctp\Style Error}\par
+% \end{multicols}
+%
+% }
+%
+%
+% \StopEventually{}
+%
+% \section{Implementation}
+%
+% \iffalse
+%<*package>
+% \fi
+%
+%    \begin{macrocode}
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\RequirePackage{pgfopts}
+\RequirePackage{xcolor}
+%    \end{macrocode}
+% Define the conditionals used by package options
+%    \begin{macrocode}
+\newif\ifcatppuccinpalette@pagecolor
+\newif\ifcatppuccinpalette@textcolor
+\pgfkeys{
+	/catppuccinPalette/.cd,
+%    \end{macrocode}
+% Define the package option keys
+%    \begin{macrocode}
+	Latte/.style={style=Latte},
+	latte/.style={style=Latte},
+	Frappe/.style={style=Frappe},
+	frappe/.style={style=Frappe},
+	Macchiato/.style={style=Macchiato},
+	macchiato/.style={style=Macchiato},
+	Mocha/.style={style=Mocha},
+	mocha/.style={style=Mocha},
+	style/.is choice,
+	style/.value required,
+	style/Latte/.code = {\def\catppuccinpalette@style{Latte}},
+	style/latte/.style = {style=Latte},
+	style/Frappe/.code = {\def\catppuccinpalette@style{Frappe}},
+	style/frappe/.style = {style=Frappe},
+	style/Macchiato/.code = {\def\catppuccinpalette@style{Macchiato}},
+	style/macchiato/.style = {style=Macchiato},
+	style/Mocha/.code = {\def\catppuccinpalette@style{Mocha}},
+	style/mocha/.style = {style=Mocha},
+	textcolor/.is if = catppuccinpalette@textcolor,
+	textcolor/.default = true,
+	pagecolor/.is if = catppuccinpalette@pagecolor,
+	pagecolor/.default = true,
+	styleAll/.style = {pagecolor,textcolor},
+%    \end{macrocode}
+% Set initial values for all options
+%    \begin{macrocode}
+	textcolor = false,
+	pagecolor = false,
+	style = Latte,
+}
+\ProcessPgfOptions{catppuccinPalette}
+%    \end{macrocode}
+% Define the \emph{Latte} colorset
+%    \begin{macrocode}
+\preparecolorset{RGB/HTML}{CatLatte}{}{%
+	Rosewater,220,138,120/DC8A78;%
+	Flamingo,221,120,120/DD7878;%
+	Pink,234,118,203/EA76CB;%
+	Mauve,136,57,239/8839EF;%
+	Red,210,15,57/D20F39;%
+	Maroon,230,69,83/E64553;%
+	Peach,254,100,11/FE640B;%
+	Yellow,223,142,29/DF8E1D;%
+	Green,64,160,43/40A02B;%
+	Teal,23,146,153/179299;%
+	Sky,4,165,229/04A5E5;%
+	Sapphire,32,159,181/209FB5;%
+	Blue,30,102,245/1E66F5;%
+	Lavender,114,135,253/7287FD;%
+	Text,76,79,105/4C4F69;%
+	Subtext1,92,95,119/5C5F77;%
+	Subtext0,108,111,133/6C6F85;%
+	Overlay2,124,127,147/7C7F93;%
+	Overlay1,140,143,161/8C8FA1;%
+	Overlay0,156,160,176/9CA0B0;%
+	Surface2,172,176,190/ACB0BE;%
+	Surface1,188,192,204/BCC0CC;%
+	Surface0,204,208,218/CCD0DA;%
+	Base,239,241,245/EFF1F5;%
+	Mantle,230,233,239/E6E9EF;%
+	Crust,220,224,232/DCE0E8%
+}
+\colorlet{CatLatteBackground}{CatLatteBase}
+\colorlet{CatLatteLink}{CatLatteBlue}
+\colorlet{CatLatteSuccess}{CatLatteGreen}
+\colorlet{CatLatteWarning}{CatLatteYellow}
+\colorlet{CatLatteError}{CatLatteRed}
+
+\preparecolorset{RGB/HTML}{CtpLatte}{}{%
+	Rosewater,220,138,120/DC8A78;%
+	Flamingo,221,120,120/DD7878;%
+	Pink,234,118,203/EA76CB;%
+	Mauve,136,57,239/8839EF;%
+	Red,210,15,57/D20F39;%
+	Maroon,230,69,83/E64553;%
+	Peach,254,100,11/FE640B;%
+	Yellow,223,142,29/DF8E1D;%
+	Green,64,160,43/40A02B;%
+	Teal,23,146,153/179299;%
+	Sky,4,165,229/04A5E5;%
+	Sapphire,32,159,181/209FB5;%
+	Blue,30,102,245/1E66F5;%
+	Lavender,114,135,253/7287FD;%
+	Text,76,79,105/4C4F69;%
+	Subtext1,92,95,119/5C5F77;%
+	Subtext0,108,111,133/6C6F85;%
+	Overlay2,124,127,147/7C7F93;%
+	Overlay1,140,143,161/8C8FA1;%
+	Overlay0,156,160,176/9CA0B0;%
+	Surface2,172,176,190/ACB0BE;%
+	Surface1,188,192,204/BCC0CC;%
+	Surface0,204,208,218/CCD0DA;%
+	Base,239,241,245/EFF1F5;%
+	Mantle,230,233,239/E6E9EF;%
+	Crust,220,224,232/DCE0E8%
+}
+%    \end{macrocode}
+% Define colors according to the catppuccin style guide
+%    \begin{macrocode}
+\colorlet{CtpLatteBackground}{CtpLatteBase}
+\colorlet{CtpLatteLink}{CtpLatteBlue}
+\colorlet{CtpLatteSuccess}{CtpLatteGreen}
+\colorlet{CtpLatteWarning}{CtpLatteYellow}
+\colorlet{CtpLatteError}{CtpLatteRed}
+%    \end{macrocode}
+% Define the styles \emph{Frappe}, \emph{Macchiato} and \emph{Mocha} accordingly
+%    \begin{macrocode}
+\preparecolorset{RGB/HTML}{CatFrappe}{}{%
+	Rosewater,242,213,207/F2D5CF;%
+	Flamingo,238,190,190/EEBEBE;%
+	Pink,244,184,228/F4B8E4;%
+	Mauve,202,158,230/CA9EE6;%
+	Red,231,130,132/E78284;%
+	Maroon,234,153,156/EA999C;%
+	Peach,239,159,118/EF9F76;%
+	Yellow,229,200,144/E5C890;%
+	Green,166,209,137/A6D189;%
+	Teal,129,200,190/81C8BE;%
+	Sky,153,209,219/99D1DB;%
+	Sapphire,133,193,220/85C1DC;%
+	Blue,140,170,238/8CAAEE;%
+	Lavender,186,187,241/BABBF1;%
+	Text,198,208,245/C6D0F5;%
+	Subtext1,181,191,226/B5BFE2;%
+	Subtext0,165,173,206/A5ADCE;%
+	Overlay2,148,156,187/949CBB;%
+	Overlay1,131,139,167/838BA7;%
+	Overlay0,115,121,148/737994;%
+	Surface2,98,104,128/626880;%
+	Surface1,81,87,109/51576D;%
+	Surface0,65,69,89/414559;%
+	Base,48,52,70/303446;%
+	Mantle,41,44,60/292C3C;%
+	Crust,35,38,52/232634%
+}
+\colorlet{CatFrappeBackground}{CatFrappeBase}
+\colorlet{CatFrappeLink}{CatFrappeBlue}
+\colorlet{CatFrappeSuccess}{CatFrappeGreen}
+\colorlet{CatFrappeWarning}{CatFrappeYellow}
+\colorlet{CatFrappeError}{CatFrappeRed}
+
+\preparecolorset{RGB/HTML}{CtpFrappe}{}{%
+	Rosewater,242,213,207/F2D5CF;%
+	Flamingo,238,190,190/EEBEBE;%
+	Pink,244,184,228/F4B8E4;%
+	Mauve,202,158,230/CA9EE6;%
+	Red,231,130,132/E78284;%
+	Maroon,234,153,156/EA999C;%
+	Peach,239,159,118/EF9F76;%
+	Yellow,229,200,144/E5C890;%
+	Green,166,209,137/A6D189;%
+	Teal,129,200,190/81C8BE;%
+	Sky,153,209,219/99D1DB;%
+	Sapphire,133,193,220/85C1DC;%
+	Blue,140,170,238/8CAAEE;%
+	Lavender,186,187,241/BABBF1;%
+	Text,198,208,245/C6D0F5;%
+	Subtext1,181,191,226/B5BFE2;%
+	Subtext0,165,173,206/A5ADCE;%
+	Overlay2,148,156,187/949CBB;%
+	Overlay1,131,139,167/838BA7;%
+	Overlay0,115,121,148/737994;%
+	Surface2,98,104,128/626880;%
+	Surface1,81,87,109/51576D;%
+	Surface0,65,69,89/414559;%
+	Base,48,52,70/303446;%
+	Mantle,41,44,60/292C3C;%
+	Crust,35,38,52/232634%
+}
+\colorlet{CtpFrappeBackground}{CtpFrappeBase}
+\colorlet{CtpFrappeLink}{CtpFrappeBlue}
+\colorlet{CtpFrappeSuccess}{CtpFrappeGreen}
+\colorlet{CtpFrappeWarning}{CtpFrappeYellow}
+\colorlet{CtpFrappeError}{CtpFrappeRed}
+
+\preparecolorset{RGB/HTML}{CatMacchiato}{}{%
+	Rosewater,244,219,214/F4DBD6;%
+	Flamingo,240,198,198/F0C6C6;%
+	Pink,245,189,230/F5BDE6;%
+	Mauve,198,160,246/C6A0F6;%
+	Red,237,135,150/ED8796;%
+	Maroon,238,153,160/EE99A0;%
+	Peach,245,169,127/F5A97F;%
+	Yellow,238,212,159/EED49F;%
+	Green,166,218,149/A6DA95;%
+	Teal,139,213,202/8BD5CA;%
+	Sky,145,215,227/91D7E3;%
+	Sapphire,125,196,228/7DC4E4;%
+	Blue,138,173,244/8AADF4;%
+	Lavender,183,189,248/B7BDF8;%
+	Text,202,211,245/CAD3F5;%
+	Subtext1,184,192,224/B8C0E0;%
+	Subtext0,165,173,203/A5ADCB;%
+	Overlay2,147,154,183/939AB7;%
+	Overlay1,128,135,162/8087A2;%
+	Overlay0,110,115,141/6E738D;%
+	Surface2,91,96,120/5B6078;%
+	Surface1,73,77,100/494D64;%
+	Surface0,54,58,79/363A4F;%
+	Base,36,39,58/24273A;%
+	Mantle,30,32,48/1E2030;%
+	Crust,24,25,38/181926%
+}
+\colorlet{CatMacchiatoBackground}{CatMacchiatoBase}
+\colorlet{CatMacchiatoLink}{CatMacchiatoBlue}
+\colorlet{CatMacchiatoSuccess}{CatMacchiatoGreen}
+\colorlet{CatMacchiatoWarning}{CatMacchiatoYellow}
+\colorlet{CatMacchiatoError}{CatMacchiatoRed}
+
+\preparecolorset{RGB/HTML}{CtpMacchiato}{}{%
+	Rosewater,244,219,214/F4DBD6;%
+	Flamingo,240,198,198/F0C6C6;%
+	Pink,245,189,230/F5BDE6;%
+	Mauve,198,160,246/C6A0F6;%
+	Red,237,135,150/ED8796;%
+	Maroon,238,153,160/EE99A0;%
+	Peach,245,169,127/F5A97F;%
+	Yellow,238,212,159/EED49F;%
+	Green,166,218,149/A6DA95;%
+	Teal,139,213,202/8BD5CA;%
+	Sky,145,215,227/91D7E3;%
+	Sapphire,125,196,228/7DC4E4;%
+	Blue,138,173,244/8AADF4;%
+	Lavender,183,189,248/B7BDF8;%
+	Text,202,211,245/CAD3F5;%
+	Subtext1,184,192,224/B8C0E0;%
+	Subtext0,165,173,203/A5ADCB;%
+	Overlay2,147,154,183/939AB7;%
+	Overlay1,128,135,162/8087A2;%
+	Overlay0,110,115,141/6E738D;%
+	Surface2,91,96,120/5B6078;%
+	Surface1,73,77,100/494D64;%
+	Surface0,54,58,79/363A4F;%
+	Base,36,39,58/24273A;%
+	Mantle,30,32,48/1E2030;%
+	Crust,24,25,38/181926%
+}
+\colorlet{CtpMacchiatoBackground}{CtpMacchiatoBase}
+\colorlet{CtpMacchiatoLink}{CtpMacchiatoBlue}
+\colorlet{CtpMacchiatoSuccess}{CtpMacchiatoGreen}
+\colorlet{CtpMacchiatoWarning}{CtpMacchiatoYellow}
+\colorlet{CtpMacchiatoError}{CtpMacchiatoRed}
+
+\preparecolorset{RGB/HTML}{CatMocha}{}{%
+	Rosewater,245,224,220/F5E0DC;%
+	Flamingo,242,205,205/F2CDCD;%
+	Pink,245,194,231/F5C2E7;%
+	Mauve,203,166,247/CBA6F7;%
+	Red,243,139,168/F38BA8;%
+	Maroon,235,160,172/EBA0AC;%
+	Peach,250,179,135/FAB387;%
+	Yellow,249,226,175/F9E2AF;%
+	Green,166,227,161/A6E3A1;%
+	Teal,148,226,213/94E2D5;%
+	Sky,137,220,235/89DCEB;%
+	Sapphire,116,199,236/74C7EC;%
+	Blue,137,180,250/89B4FA;%
+	Lavender,180,190,254/B4BEFE;%
+	Text,205,214,244/CDD6F4;%
+	Subtext1,186,194,222/BAC2DE;%
+	Subtext0,166,173,200/A6ADC8;%
+	Overlay2,147,153,178/9399B2;%
+	Overlay1,127,132,156/7F849C;%
+	Overlay0,108,112,134/6C7086;%
+	Surface2,88,91,112/585B70;%
+	Surface1,69,71,90/45475A;%
+	Surface0,49,50,68/313244;%
+	Base,30,30,46/1E1E2E;%
+	Mantle,24,24,37/181825;%
+	Crust,17,17,27/11111B%
+}
+\colorlet{CatMochaBackground}{CatMochaBase}
+\colorlet{CatMochaLink}{CatMochaBlue}
+\colorlet{CatMochaSuccess}{CatMochaGreen}
+\colorlet{CatMochaWarning}{CatMochaYellow}
+\colorlet{CatMochaError}{CatMochaRed}
+
+\preparecolorset{RGB/HTML}{CtpMocha}{}{%
+	Rosewater,245,224,220/F5E0DC;%
+	Flamingo,242,205,205/F2CDCD;%
+	Pink,245,194,231/F5C2E7;%
+	Mauve,203,166,247/CBA6F7;%
+	Red,243,139,168/F38BA8;%
+	Maroon,235,160,172/EBA0AC;%
+	Peach,250,179,135/FAB387;%
+	Yellow,249,226,175/F9E2AF;%
+	Green,166,227,161/A6E3A1;%
+	Teal,148,226,213/94E2D5;%
+	Sky,137,220,235/89DCEB;%
+	Sapphire,116,199,236/74C7EC;%
+	Blue,137,180,250/89B4FA;%
+	Lavender,180,190,254/B4BEFE;%
+	Text,205,214,244/CDD6F4;%
+	Subtext1,186,194,222/BAC2DE;%
+	Subtext0,166,173,200/A6ADC8;%
+	Overlay2,147,153,178/9399B2;%
+	Overlay1,127,132,156/7F849C;%
+	Overlay0,108,112,134/6C7086;%
+	Surface2,88,91,112/585B70;%
+	Surface1,69,71,90/45475A;%
+	Surface0,49,50,68/313244;%
+	Base,30,30,46/1E1E2E;%
+	Mantle,24,24,37/181825;%
+	Crust,17,17,27/11111B%
+}
+\colorlet{CtpMochaBackground}{CtpMochaBase}
+\colorlet{CtpMochaLink}{CtpMochaBlue}
+\colorlet{CtpMochaSuccess}{CtpMochaGreen}
+\colorlet{CtpMochaWarning}{CtpMochaYellow}
+\colorlet{CtpMochaError}{CtpMochaRed}
+
+%    \end{macrocode}
+% Define shortcuts for active style (legacy part)
+%    \begin{macrocode}
+\colorlet{CatRosewater}{Ctp\catppuccinpalette@style Rosewater}
+\colorlet{CatFlamingo}{Ctp\catppuccinpalette@style Flamingo}
+\colorlet{CatPink}{Ctp\catppuccinpalette@style Pink}
+\colorlet{CatMauve}{Ctp\catppuccinpalette@style Mauve}
+\colorlet{CatRed}{Ctp\catppuccinpalette@style Red}
+\colorlet{CatMaroon}{Ctp\catppuccinpalette@style Maroon}
+\colorlet{CatPeach}{Ctp\catppuccinpalette@style Peach}
+\colorlet{CatYellow}{Ctp\catppuccinpalette@style Yellow}
+\colorlet{CatGreen}{Ctp\catppuccinpalette@style Green}
+\colorlet{CatTeal}{Ctp\catppuccinpalette@style Teal}
+\colorlet{CatSky}{Ctp\catppuccinpalette@style Sky}
+\colorlet{CatSapphire}{Ctp\catppuccinpalette@style Sapphire}
+\colorlet{CatBlue}{Ctp\catppuccinpalette@style Blue}
+\colorlet{CatLavender}{Ctp\catppuccinpalette@style Lavender}
+\colorlet{CatText}{Ctp\catppuccinpalette@style Text}
+\colorlet{CatSubtext1}{Ctp\catppuccinpalette@style Subtext1}
+\colorlet{CatSubtext0}{Ctp\catppuccinpalette@style Subtext0}
+\colorlet{CatOverlay2}{Ctp\catppuccinpalette@style Overlay2}
+\colorlet{CatOverlay1}{Ctp\catppuccinpalette@style Overlay1}
+\colorlet{CatOverlay0}{Ctp\catppuccinpalette@style Overlay0}
+\colorlet{CatSurface2}{Ctp\catppuccinpalette@style Surface2}
+\colorlet{CatSurface1}{Ctp\catppuccinpalette@style Surface1}
+\colorlet{CatSurface0}{Ctp\catppuccinpalette@style Surface0}
+\colorlet{CatBase}{Ctp\catppuccinpalette@style Base}
+\colorlet{CatMantle}{Ctp\catppuccinpalette@style Mantle}
+\colorlet{CatCrust}{Ctp\catppuccinpalette@style Crust}
+\colorlet{CatBackground}{Ctp\catppuccinpalette@style Base}
+\colorlet{CatLink}{Ctp\catppuccinpalette@style Blue}
+\colorlet{CatSuccess}{Ctp\catppuccinpalette@style Green}
+\colorlet{CatWarning}{Ctp\catppuccinpalette@style Yellow}
+\colorlet{CatError}{Ctp\catppuccinpalette@style Red}
+
+%    \end{macrocode}
+% New command which parses the same options like the package. Can be used to e.\,g.\, reset/reinit the selected style.
+%    \begin{macrocode}
+\NewDocumentCommand\CtpReinit{O{}}{%
+	\pgfkeys{%
+		/catppuccinPalette/.cd,%
+		#1%
+	}%
+%    \end{macrocode}
+% Define shortcuts for active style
+%    \begin{macrocode}
+	\colorlet{CtpRosewater}{Ctp\catppuccinpalette@style Rosewater}%
+	\colorlet{CtpFlamingo}{Ctp\catppuccinpalette@style Flamingo}%
+	\colorlet{CtpPink}{Ctp\catppuccinpalette@style Pink}%
+	\colorlet{CtpMauve}{Ctp\catppuccinpalette@style Mauve}%
+	\colorlet{CtpRed}{Ctp\catppuccinpalette@style Red}%
+	\colorlet{CtpMaroon}{Ctp\catppuccinpalette@style Maroon}%
+	\colorlet{CtpPeach}{Ctp\catppuccinpalette@style Peach}%
+	\colorlet{CtpYellow}{Ctp\catppuccinpalette@style Yellow}%
+	\colorlet{CtpGreen}{Ctp\catppuccinpalette@style Green}%
+	\colorlet{CtpTeal}{Ctp\catppuccinpalette@style Teal}%
+	\colorlet{CtpSky}{Ctp\catppuccinpalette@style Sky}%
+	\colorlet{CtpSapphire}{Ctp\catppuccinpalette@style Sapphire}%
+	\colorlet{CtpBlue}{Ctp\catppuccinpalette@style Blue}%
+	\colorlet{CtpLavender}{Ctp\catppuccinpalette@style Lavender}%
+	\colorlet{CtpText}{Ctp\catppuccinpalette@style Text}%
+	\colorlet{CtpSubtext1}{Ctp\catppuccinpalette@style Subtext1}%
+	\colorlet{CtpSubtext0}{Ctp\catppuccinpalette@style Subtext0}%
+	\colorlet{CtpOverlay2}{Ctp\catppuccinpalette@style Overlay2}%
+	\colorlet{CtpOverlay1}{Ctp\catppuccinpalette@style Overlay1}%
+	\colorlet{CtpOverlay0}{Ctp\catppuccinpalette@style Overlay0}%
+	\colorlet{CtpSurface2}{Ctp\catppuccinpalette@style Surface2}%
+	\colorlet{CtpSurface1}{Ctp\catppuccinpalette@style Surface1}%
+	\colorlet{CtpSurface0}{Ctp\catppuccinpalette@style Surface0}%
+	\colorlet{CtpBase}{Ctp\catppuccinpalette@style Base}%
+	\colorlet{CtpMantle}{Ctp\catppuccinpalette@style Mantle}%
+	\colorlet{CtpCrust}{Ctp\catppuccinpalette@style Crust}%
+	\colorlet{CtpBackground}{Ctp\catppuccinpalette@style Base}%
+	\colorlet{CtpLink}{Ctp\catppuccinpalette@style Blue}%
+	\colorlet{CtpSuccess}{Ctp\catppuccinpalette@style Green}%
+	\colorlet{CtpWarning}{Ctp\catppuccinpalette@style Yellow}%
+	\colorlet{CtpError}{Ctp\catppuccinpalette@style Red}%
+%    \end{macrocode}
+% Set pagecolor according to the style guide if the user wants this
+%    \begin{macrocode}
+\ifcatppuccinpalette@pagecolor%
+	\pagecolor{CtpBackground}%
+\fi%
+%    \end{macrocode}
+% Set textcolor according to the style guide if the user wants this
+%    \begin{macrocode}
+\ifcatppuccinpalette@textcolor%
+	\color{CtpText}%
+\fi%
+%    \end{macrocode}
+%    \begin{macrocode}
+}
+\CtpReinit[]
+%    \end{macrocode}
+\endinput
+%
+% \iffalse
+%</package>
+% \fi
+%
+% \Finale
+\endinput
