@@ -37,7 +37,7 @@
 ## Usage
 
 ### Importing the theme file
-1. At the moment this package is on CTAN, but probably not included in your texlive installation. As a result you have to install it manually:
+1. The [catppuccinPalette](https://www.ctan.org/pkg/catppuccinpalette) package is present on CTAN, but probably not included in your TeX Live installation. Follow the steps below to install it manually:
     - Shortcut: If you set up your local `texmf` you should be able to simply install by executing `make install` (this installs the package locally for the current user)
     - If you don't like installing the package locally for the current user you might also execue `l3build unpack` and move the generated `.sty` file `build/unpacked/catppuccinpalette.sty` to the root directory of your project.
     - If you don't have `l3build` available, you can also download the `catppuccinpalette.sty` artifact from the latest [workflow run](https://github.com/atticus-sullivan/catppuccinLatex/actions), unpack it, and move `.sty` file to your project root.
