@@ -20,14 +20,14 @@ jobs:
       run: make ctan
 
     - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v4.3.1
+      uses: actions/upload-artifact@v4.3.6
       with:
         name: ctan-package
         path: |
           catppuccinpalette-ctan.zip
 
     - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v4.3.1
+      uses: actions/upload-artifact@v4.3.6
       with:
         name: catppuccinpalette.sty
         path: |
