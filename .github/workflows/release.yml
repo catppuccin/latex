@@ -1,0 +1,26 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install make deps
+        run: |
+          sudo apt install texlive-latex-extra
+
+      - name: make
+        run: make ctan
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            catppuccinpalette-ctan.zip
+            build/unpacked/catppuccinpalette.sty
