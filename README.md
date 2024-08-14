@@ -40,7 +40,7 @@
 1. The [catppuccinPalette](https://www.ctan.org/pkg/catppuccinpalette) package is present on CTAN, but probably not included in your TeX Live installation. Follow the steps below to install it manually:
     - Shortcut: If you set up your local `texmf` you should be able to simply install by executing `make install` (this installs the package locally for the current user)
     - If you don't like installing the package locally for the current user you might also execue `l3build unpack` and move the generated `.sty` file `build/unpacked/catppuccinpalette.sty` to the root directory of your project.
-    - If you don't have `l3build` available, you can also download the `catppuccinpalette.sty` artifact from the latest [workflow run](https://github.com/catppuccin/latex/actions/workflows/package.yml), unpack it, and move `.sty` file to your project root.
+    - If you don't have `l3build` available, you can also download the `catppuccinpalette.sty` file from the [latest GitHub release](https://github.com/catppuccin/latex/releases/latest) and move the file to your project root.
 2. Import the package by adding `\usepackage[FLAVOR]{catppuccinpalette}`, replacing `FLAVOR` with the flavor of your choice. i.e. `\usepackage[macchiato]{catppuccinpalette}`. Valid options are: mocha (default), latte, frappe, and macchiato.
     - If you want the package not only to add color definitions, you can also pass `textcolor=true` and/or `pagecolor=true` to the `catppuccinpalette` package.
     - Also note that in the pdf containing the documentation, the available options are described in more detail and also the defined colors are listed and shown.
