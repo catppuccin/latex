@@ -2,33 +2,33 @@ name: package
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: install make deps
-      run: |
-        sudo apt install texlive-latex-extra
+      - name: install make deps
+        run: |
+          sudo apt install texlive-latex-extra
 
-    - name: make
-      run: make ctan
+      - name: make
+        run: make ctan
 
-    - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v4.3.6
-      with:
-        name: ctan-package
-        path: |
-          catppuccinpalette-ctan.zip
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4.3.6
+        with:
+          name: ctan-package
+          path: |
+            catppuccinpalette-ctan.zip
 
-    - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v4.3.6
-      with:
-        name: catppuccinpalette.sty
-        path: |
-          build/unpacked/catppuccinpalette.sty
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4.3.6
+        with:
+          name: catppuccinpalette.sty
+          path: |
+            build/unpacked/catppuccinpalette.sty
