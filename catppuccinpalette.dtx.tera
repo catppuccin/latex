@@ -164,19 +164,19 @@ version: 1.1.0
 % \subsection{Colors}
 % \textbf{Note:} The colors with the prefix |Cat| are deprecated and will be removed in a future version!
 % {{ '\newcommand{\showCol}[1]{\raisebox{0.5ex}{\fcolorbox{black}{#1}{\hspace{1em}}} #1}' }}
-{% for id, flavor in flavors %}{{ '% \subsubsection{Style \texttt{'}}{{ id | capitalize }}{{'}}' }}
-% \begin{multicols}{2}{% for name,color in flavor.colors %}
-% \showCol{Ctp{{ id | capitalize }}{{ name | capitalize }}}\par{% endfor %}
+{% for _, flavor in flavors %}{{ '% \subsubsection{Style \texttt{'}}{{ flavor.identifier | capitalize }}{{'}}' }}
+% \begin{multicols}{2}{% for _, color in flavor.colors %}
+% \showCol{Ctp{{ flavor.identifier | capitalize }}{{ color.identifier | capitalize }}}\par{% endfor %}
 % \end{multicols}
 % Some basic colors according to the style guide:
 % \begin{multicols}{2}
-% \showCol{Ctp{{ id | capitalize }}Background}\par
-% \showCol{Ctp{{ id | capitalize }}Link}\par
+% \showCol{Ctp{{ flavor.identifier | capitalize }}Background}\par
+% \showCol{Ctp{{ flavor.identifier | capitalize }}Link}\par
 % \phantom{}\par
 % \columnbreak
-% \showCol{Ctp{{ id | capitalize }}Success}\par
-% \showCol{Ctp{{ id | capitalize }}Warning}\par
-% \showCol{Ctp{{ id | capitalize }}Error}\par
+% \showCol{Ctp{{ flavor.identifier | capitalize }}Success}\par
+% \showCol{Ctp{{ flavor.identifier | capitalize }}Warning}\par
+% \showCol{Ctp{{ flavor.identifier | capitalize }}Error}\par
 % \end{multicols}
 {% endfor %}
 %
@@ -234,29 +234,29 @@ version: 1.1.0
 }
 \ProcessPgfOptions{catppuccinPalette}
 %    \end{macrocode}
-{% for id, flavor in flavors %}
-{{ '% Define the \emph{' }}{{ id | capitalize }}{{ '} colorset' }}
+{% for _, flavor in flavors %}
+{{ '% Define the \emph{' }}{{ flavor.identifier | capitalize }}{{ '} colorset' }}
 %    \begin{macrocode}
-{{ '\preparecolorset{RGB/HTML}{Cat' }}{{ id | capitalize }}{{ '}{}{%' }}{% for name,color in flavor.colors %}
-	{{ name | capitalize }},{{ color.rgb.r }},{{ color.rgb.g }},{{ color.rgb.b }}/{{ color.hex | upper }}{% if not loop.last %};{% endif %}%{% endfor %}
+{{ '\preparecolorset{RGB/HTML}{Cat' }}{{ flavor.identifier | capitalize }}{{ '}{}{%' }}{% for _, color in flavor.colors %}
+	{{ color.identifier | capitalize }},{{ color.rgb.r }},{{ color.rgb.g }},{{ color.rgb.b }}/{{ color.hex | upper }}{% if not loop.last %};{% endif %}%{% endfor %}
 }
-{{ '\colorlet{Cat' }}{{ id | capitalize }}{{ 'Background}{Cat' }}{{ id | capitalize }}{{ 'Base}' }}
-{{ '\colorlet{Cat' }}{{ id | capitalize }}{{ 'Link}{Cat' }}{{ id | capitalize }}{{ 'Blue}' }}
-{{ '\colorlet{Cat' }}{{ id | capitalize }}{{ 'Success}{Cat' }}{{ id | capitalize }}{{ 'Green}' }}
-{{ '\colorlet{Cat' }}{{ id | capitalize }}{{ 'Warning}{Cat' }}{{ id | capitalize }}{{ 'Yellow}' }}
-{{ '\colorlet{Cat' }}{{ id | capitalize }}{{ 'Error}{Cat' }}{{ id | capitalize }}{{ 'Red}' }}
+{{ '\colorlet{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Background}{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Base}' }}
+{{ '\colorlet{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Link}{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Blue}' }}
+{{ '\colorlet{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Success}{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Green}' }}
+{{ '\colorlet{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Warning}{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Yellow}' }}
+{{ '\colorlet{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Error}{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Red}' }}
 
-{{ '\preparecolorset{RGB/HTML}{Ctp' }}{{ id | capitalize }}{{ '}{}{%' }}{% for name,color in flavor.colors %}
-	{{ name | capitalize }},{{ color.rgb.r }},{{ color.rgb.g }},{{ color.rgb.b }}/{{ color.hex | upper }}{% if not loop.last %};{% endif %}%{% endfor %}
+{{ '\preparecolorset{RGB/HTML}{Ctp' }}{{ flavor.identifier | capitalize }}{{ '}{}{%' }}{% for _, color in flavor.colors %}
+	{{ color.identifier | capitalize }},{{ color.rgb.r }},{{ color.rgb.g }},{{ color.rgb.b }}/{{ color.hex | upper }}{% if not loop.last %};{% endif %}%{% endfor %}
 }
 %    \end{macrocode}
 % Define colors according to the catppuccin style guide
 %    \begin{macrocode}
-{{ '\colorlet{Ctp' }}{{ id | capitalize }}{{ 'Background}{Ctp' }}{{ id | capitalize }}{{ 'Base}' }}
-{{ '\colorlet{Ctp' }}{{ id | capitalize }}{{ 'Link}{Ctp' }}{{ id | capitalize }}{{ 'Blue}' }}
-{{ '\colorlet{Ctp' }}{{ id | capitalize }}{{ 'Success}{Ctp' }}{{ id | capitalize }}{{ 'Green}' }}
-{{ '\colorlet{Ctp' }}{{ id | capitalize }}{{ 'Warning}{Ctp' }}{{ id | capitalize }}{{ 'Yellow}' }}
-{{ '\colorlet{Ctp' }}{{ id | capitalize }}{{ 'Error}{Ctp' }}{{ id | capitalize }}{{ 'Red}' }}
+{{ '\colorlet{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Background}{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Base}' }}
+{{ '\colorlet{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Link}{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Blue}' }}
+{{ '\colorlet{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Success}{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Green}' }}
+{{ '\colorlet{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Warning}{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Yellow}' }}
+{{ '\colorlet{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Error}{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Red}' }}
 %    \end{macrocode}
 {% endfor %}
 % Define shortcuts for active style (legacy part)
