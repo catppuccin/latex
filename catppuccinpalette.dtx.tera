@@ -269,7 +269,7 @@ version: 1.1.0
 {{ '% Define the \emph{' }}{{ id | capitalize }}{{ '} colorset' }}
 %    \begin{macrocode}
 {{ '\preparecolorset{RGB/HTML}{Cat' }}{{ id | capitalize }}{{ '}{}{%' }}{% for name,color in flavor.colors %}
-	{{ name | capitalize }},{{ color.rgb.r }},{{ color.rgb.g }},{{ color.rgb.b }}/{{ color.hex | upper }};%{% endfor %}
+	{{ name | capitalize }},{{ color.rgb.r }},{{ color.rgb.g }},{{ color.rgb.b }}/{{ color.hex | upper }}{% if not loop.last %};{% endif %}%{% endfor %}
 }
 {{ '\colorlet{Cat' }}{{ id | capitalize }}{{ 'Background}{Cat' }}{{ id | capitalize }}{{ 'Base}' }}
 {{ '\colorlet{Cat' }}{{ id | capitalize }}{{ 'Link}{Cat' }}{{ id | capitalize }}{{ 'Blue}' }}
@@ -278,7 +278,7 @@ version: 1.1.0
 {{ '\colorlet{Cat' }}{{ id | capitalize }}{{ 'Error}{Cat' }}{{ id | capitalize }}{{ 'Red}' }}
 
 {{ '\preparecolorset{RGB/HTML}{Ctp' }}{{ id | capitalize }}{{ '}{}{%' }}{% for name,color in flavor.colors %}
-	{{ name | capitalize }},{{ color.rgb.r }},{{ color.rgb.g }},{{ color.rgb.b }}/{{ color.hex | upper }};%{% endfor %}
+	{{ name | capitalize }},{{ color.rgb.r }},{{ color.rgb.g }},{{ color.rgb.b }}/{{ color.hex | upper }}{% if not loop.last %};{% endif %}%{% endfor %}
 }
 %    \end{macrocode}
 % Define colors according to the catppuccin style guide
