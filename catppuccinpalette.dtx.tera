@@ -164,52 +164,21 @@ version: 1.1.0
 % \subsection{Colors}
 % \textbf{Note:} The colors with the prefix |Cat| are deprecated and will be removed in a future version!
 % {{ '\newcommand{\showCol}[1]{\raisebox{0.5ex}{\fcolorbox{black}{#1}{\hspace{1em}}} #1}' }}
-% \foreach \Style in {Latte,Frappe,Macchiato,Mocha}{
-% {{ '\subsubsection{Style \texttt{\Style}}' }}
-% \begin{multicols}{2}
-%  \showCol{Ctp\Style Blue}\par
-%  \showCol{Ctp\Style Rosewater}\par
-%  \showCol{Ctp\Style Flamingo}\par
-%  \showCol{Ctp\Style Pink}\par
-%  \showCol{Ctp\Style Mauve}\par
-%  \showCol{Ctp\Style Red}\par
-%  \showCol{Ctp\Style Maroon}\par
-%  \showCol{Ctp\Style Peach}\par
-%  \showCol{Ctp\Style Yellow}\par
-%  \showCol{Ctp\Style Green}\par
-%  \showCol{Ctp\Style Teal}\par
-%  \showCol{Ctp\Style Sky}\par
-%  \showCol{Ctp\Style Sapphire}\par
-%  \showCol{Ctp\Style Blue}\par
-%  \showCol{Ctp\Style Lavender}\par
-%  \showCol{Ctp\Style Text}\par
-%  \showCol{Ctp\Style Subtext1}\par
-%  \showCol{Ctp\Style Subtext0}\par
-%  \showCol{Ctp\Style Overlay2}\par
-%  \showCol{Ctp\Style Overlay1}\par
-%  \showCol{Ctp\Style Overlay0}\par
-%  \showCol{Ctp\Style Surface2}\par
-%  \showCol{Ctp\Style Surface1}\par
-%  \showCol{Ctp\Style Surface0}\par
-%  \showCol{Ctp\Style Base}\par
-%  \showCol{Ctp\Style Mantle}\par
-%  \showCol{Ctp\Style Crust}\par
+{% for id, flavor in flavors %}{{ '% \subsubsection{Style \texttt{'}}{{ id | capitalize }}{{'}}' }}
+% \begin{multicols}{2}{% for name,color in flavor.colors %}
+% \showCol{Ctp{{ id | capitalize }}{{ name | capitalize }}}\par{% endfor %}
 % \end{multicols}
-%
 % Some basic colors according to the style guide:
-%
 % \begin{multicols}{2}
-% \showCol{Ctp\Style Background}\par
-% \showCol{Ctp\Style Link}\par
+% \showCol{Ctp{{ id | capitalize }}Background}\par
+% \showCol{Ctp{{ id | capitalize }}Link}\par
 % \phantom{}\par
 % \columnbreak
-% \showCol{Ctp\Style Success}\par
-% \showCol{Ctp\Style Warning}\par
-% \showCol{Ctp\Style Error}\par
+% \showCol{Ctp{{ id | capitalize }}Success}\par
+% \showCol{Ctp{{ id | capitalize }}Warning}\par
+% \showCol{Ctp{{ id | capitalize }}Error}\par
 % \end{multicols}
-%
-% }
-%
+{% endfor %}
 %
 % \StopEventually{}
 %
