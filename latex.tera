@@ -1,0 +1,348 @@
+---
+whiskers:
+    version: "2.5.0"
+    filename: "catppuccinpalette.dtx"
+
+version: 1.1.0
+versionDate:
+    year: 2024
+    month: 08
+    day: 13
+
+---
+% \iffalse meta-comment
+%
+{{ read_file(path="LICENSE") | indent(prefix="% ", first=true, blank=true) }}
+%
+% \fi
+%
+% \iffalse
+%<*driver>
+\ProvidesFile{catppuccinpalette.dtx}
+%</driver>
+%<package>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+%<package>\ProvidesPackage{catppuccinpalette}
+%<*package>
+    [{{versionDate.year}}/{{versionDate.month}}/{{versionDate.day}} v{{ version }} catppuccin xcolor palette]
+%</package>
+%
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage{catppuccinpalette}
+\usepackage{multicol}
+\usepackage{pgffor}
+\usepackage{tabularx, booktabs}
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+  \DocInput{catppuccinpalette.dtx}
+  \PrintChanges
+  \PrintIndex
+\end{document}
+%</driver>
+% \fi
+%
+% \CheckSum{111}
+%
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+%
+% \changes{v0.0.1}{2024/02/09}{Converted to DTX file}
+% \changes{v1.0.0}{2024/02/27}{First full release}
+% \changes{v1.0.1}{2024/05/19}{Make fit for CTAN}
+% \changes{v1.0.2}{2024/05/19}{Fix colors in documentation}
+% \changes{v1.1.0}{2024/08/13}{Move to / Merge with official catppuccin. Thereby deprecate colors with |Cat| prefix. Subject to removal in the future}
+%
+% \DoNotIndex{\newcommand,\newenvironment,\color,\colorlet,\def,\fi,\RequirePackage,\ProvidesPackage,\ProcessPgfOptions,\preparecolorset,\pgfkeys,\pagecolor,\newif,\NeedsTeXFormat}
+%
+% \providecommand*\pkg{\textsf}
+% \providecommand*{\url}{\texttt}
+% \GetFileInfo{catppuccinpalette.dtx}
+% \title{The \textsf{catppuccinPalette} package}
+% {{ '\author{Lukas Heindl \\ \url{oss.heindl+latex@protonmail.com} \\ \url{https://github.com/catppuccin/latex}}' }}
+% \date{\fileversion~from \filedate}
+%
+% \maketitle
+%
+% \begin{abstract}
+% The LaTeX package \pkg{catppuccinPalette} provides new colors for xcolor.
+% \end{abstract}
+%
+% \section{Introduction}
+%
+% {{ 'Catppuccin\footnote{\url{https://github.com/catppuccin/catppuccin}} is a soothing' }}
+% pastel theme in 4 flavours/styles (\emph{Latte}, \emph{Frapp\'e},
+% \emph{Macchiato}, \emph{Mocha}). This package defines these themes as xcolor
+% colors.
+%
+% \section{Usage}
+%
+% Load via |\usepackage{catppuccinpalette}|
+%
+% Just use the new colors (prefixed with \verb|Ctp<Style>|) like normal xcolors.
+% In addition to the usual colors of the palette, this package defines some
+% colors according to the
+% {{ 'style guide\footnote{\url{https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md}}' }}
+% for ease of use.
+%
+% This package also allows you to set a specific style which sets the shortened
+% color names (prefixed only with \verb|Ctp|) to the selected style (allows for
+% easy switching style) via the package option \verb|style|.
+%
+% This package loads xcolor (without options) so if you want to set some xcolor
+% options you should load xcolor before loading this package.
+%
+% \subsection{Package options}
+% \begin{tabularx}{\linewidth}{lX}
+%   \emph{Option} & \emph{Description}
+%   \\\toprule
+%   \verb|style| &
+%   set the style used by the shortened prefix (\verb|Ctp|). Possible values:
+%   \verb|Latte| (default+initial), \verb|latte|, \verb|Frappe|, \verb|frappe|,
+%   \verb|Mocha|, \verb|mocha|, \verb|Macchiato|, \verb|macchiato|
+%   \\
+%   &
+%   As a shortcut, you can also just use e.\,g.\,
+%   |\usepackage[latte]{catppuccinPalette}| as a shorthand for
+%   |\usepackage[style=latte]{catppuccinPalette}|
+%   \\
+%   \verb|textcolor| &
+%   set the default textcolor of the document to \verb|CtpText|. Possible values:
+%   \verb|false| (default+initial), \verb|true|
+%   \\
+%   \verb|pagecolor| &
+%   set the pagecolor of the document to \verb|CtpBackground|. Possible values:
+%   \verb|false| (default+initial), \verb|true|
+%   \\\midrule
+%   \verb|styleAll| &
+%   shortcut for setting \verb|pagecolor| and \verb|textcolor|
+%   \\\bottomrule
+% \end{tabularx}
+%
+% \subsubsection{Change settings mid-document}
+% \DescribeMacro{\CtpReinit} |\CtpReinit[opts]|
+%
+% This command allows to reinitialize this package. All previous configuration
+% options will be kept. In particular this allows to change the active
+% style/flavor mid-document. Note that if you decided this package should
+% change the background color when loading the package and only do
+% |\CptReinit[style=<another style>]|, then the background color will also be
+% adjusted on reinitialization.
+%
+% The command processes the same options like the ones you can pass when
+% loading the package (see documentation above).
+%
+% \subsection{Colors}
+% \textbf{Note:} The colors with the prefix |Cat| are deprecated and will be removed in a future version!
+% {{ '\newcommand{\showCol}[1]{\raisebox{0.5ex}{\fcolorbox{black}{#1}{\hspace{1em}}} #1}' }}
+{% for _, flavor in flavors %}{{ '% \subsubsection{Style \texttt{'}}{{ flavor.identifier | capitalize }}{{'}}' }}
+% \begin{multicols}{2}{% for _, color in flavor.colors %}
+% \showCol{Ctp{{ flavor.identifier | capitalize }}{{ color.identifier | capitalize }}}\par{% endfor %}
+% \end{multicols}
+% Some basic colors according to the style guide:
+% \begin{multicols}{2}
+% \showCol{Ctp{{ flavor.identifier | capitalize }}Background}\par
+% \showCol{Ctp{{ flavor.identifier | capitalize }}Link}\par
+% \phantom{}\par
+% \columnbreak
+% \showCol{Ctp{{ flavor.identifier | capitalize }}Success}\par
+% \showCol{Ctp{{ flavor.identifier | capitalize }}Warning}\par
+% \showCol{Ctp{{ flavor.identifier | capitalize }}Error}\par
+% \end{multicols}
+{% endfor %}
+%
+% \StopEventually{}
+%
+% \section{Implementation}
+%
+% \iffalse
+%<*package>
+% \fi
+%
+%    \begin{macrocode}
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\RequirePackage{pgfopts}
+\RequirePackage{xcolor}
+%    \end{macrocode}
+% Define the conditionals used by package options
+%    \begin{macrocode}
+\newif\ifcatppuccinpalette@pagecolor
+\newif\ifcatppuccinpalette@textcolor
+\pgfkeys{
+	/catppuccinPalette/.cd,
+%    \end{macrocode}
+% Define the package option keys
+%    \begin{macrocode}
+	Latte/.style={style=Latte},
+	latte/.style={style=Latte},
+	Frappe/.style={style=Frappe},
+	frappe/.style={style=Frappe},
+	Macchiato/.style={style=Macchiato},
+	macchiato/.style={style=Macchiato},
+	Mocha/.style={style=Mocha},
+	mocha/.style={style=Mocha},
+	style/.is choice,
+	style/.value required,
+	{{ 'style/Latte/.code = {\def\catppuccinpalette@style{Latte}},' }}
+	style/latte/.style = {style=Latte},
+	{{ 'style/Frappe/.code = {\def\catppuccinpalette@style{Frappe}},' }}
+	style/frappe/.style = {style=Frappe},
+	{{ 'style/Macchiato/.code = {\def\catppuccinpalette@style{Macchiato}},' }}
+	style/macchiato/.style = {style=Macchiato},
+	{{ 'style/Mocha/.code = {\def\catppuccinpalette@style{Mocha}},' }}
+	style/mocha/.style = {style=Mocha},
+	textcolor/.is if = catppuccinpalette@textcolor,
+	textcolor/.default = true,
+	pagecolor/.is if = catppuccinpalette@pagecolor,
+	pagecolor/.default = true,
+	styleAll/.style = {pagecolor,textcolor},
+%    \end{macrocode}
+% Set initial values for all options
+%    \begin{macrocode}
+	textcolor = false,
+	pagecolor = false,
+	style = Latte,
+}
+\ProcessPgfOptions{catppuccinPalette}
+%    \end{macrocode}
+{% for _, flavor in flavors %}
+{{ '% Define the \emph{' }}{{ flavor.identifier | capitalize }}{{ '} colorset' }}
+%    \begin{macrocode}
+{{ '\preparecolorset{RGB/HTML}{Cat' }}{{ flavor.identifier | capitalize }}{{ '}{}{%' }}{% for _, color in flavor.colors %}
+	{{ color.identifier | capitalize }},{{ color.rgb.r }},{{ color.rgb.g }},{{ color.rgb.b }}/{{ color.hex | upper }}{% if not loop.last %};{% endif %}%{% endfor %}
+}
+{{ '\colorlet{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Background}{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Base}' }}
+{{ '\colorlet{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Link}{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Blue}' }}
+{{ '\colorlet{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Success}{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Green}' }}
+{{ '\colorlet{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Warning}{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Yellow}' }}
+{{ '\colorlet{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Error}{Cat' }}{{ flavor.identifier | capitalize }}{{ 'Red}' }}
+
+{{ '\preparecolorset{RGB/HTML}{Ctp' }}{{ flavor.identifier | capitalize }}{{ '}{}{%' }}{% for _, color in flavor.colors %}
+	{{ color.identifier | capitalize }},{{ color.rgb.r }},{{ color.rgb.g }},{{ color.rgb.b }}/{{ color.hex | upper }}{% if not loop.last %};{% endif %}%{% endfor %}
+}
+%    \end{macrocode}
+% Define colors according to the catppuccin style guide
+%    \begin{macrocode}
+{{ '\colorlet{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Background}{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Base}' }}
+{{ '\colorlet{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Link}{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Blue}' }}
+{{ '\colorlet{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Success}{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Green}' }}
+{{ '\colorlet{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Warning}{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Yellow}' }}
+{{ '\colorlet{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Error}{Ctp' }}{{ flavor.identifier | capitalize }}{{ 'Red}' }}
+%    \end{macrocode}
+{% endfor %}
+% Define shortcuts for active style (legacy part)
+%    \begin{macrocode}
+\colorlet{CatRosewater}{Ctp\catppuccinpalette@style Rosewater}
+\colorlet{CatFlamingo}{Ctp\catppuccinpalette@style Flamingo}
+\colorlet{CatPink}{Ctp\catppuccinpalette@style Pink}
+\colorlet{CatMauve}{Ctp\catppuccinpalette@style Mauve}
+\colorlet{CatRed}{Ctp\catppuccinpalette@style Red}
+\colorlet{CatMaroon}{Ctp\catppuccinpalette@style Maroon}
+\colorlet{CatPeach}{Ctp\catppuccinpalette@style Peach}
+\colorlet{CatYellow}{Ctp\catppuccinpalette@style Yellow}
+\colorlet{CatGreen}{Ctp\catppuccinpalette@style Green}
+\colorlet{CatTeal}{Ctp\catppuccinpalette@style Teal}
+\colorlet{CatSky}{Ctp\catppuccinpalette@style Sky}
+\colorlet{CatSapphire}{Ctp\catppuccinpalette@style Sapphire}
+\colorlet{CatBlue}{Ctp\catppuccinpalette@style Blue}
+\colorlet{CatLavender}{Ctp\catppuccinpalette@style Lavender}
+\colorlet{CatText}{Ctp\catppuccinpalette@style Text}
+\colorlet{CatSubtext1}{Ctp\catppuccinpalette@style Subtext1}
+\colorlet{CatSubtext0}{Ctp\catppuccinpalette@style Subtext0}
+\colorlet{CatOverlay2}{Ctp\catppuccinpalette@style Overlay2}
+\colorlet{CatOverlay1}{Ctp\catppuccinpalette@style Overlay1}
+\colorlet{CatOverlay0}{Ctp\catppuccinpalette@style Overlay0}
+\colorlet{CatSurface2}{Ctp\catppuccinpalette@style Surface2}
+\colorlet{CatSurface1}{Ctp\catppuccinpalette@style Surface1}
+\colorlet{CatSurface0}{Ctp\catppuccinpalette@style Surface0}
+\colorlet{CatBase}{Ctp\catppuccinpalette@style Base}
+\colorlet{CatMantle}{Ctp\catppuccinpalette@style Mantle}
+\colorlet{CatCrust}{Ctp\catppuccinpalette@style Crust}
+\colorlet{CatBackground}{Ctp\catppuccinpalette@style Base}
+\colorlet{CatLink}{Ctp\catppuccinpalette@style Blue}
+\colorlet{CatSuccess}{Ctp\catppuccinpalette@style Green}
+\colorlet{CatWarning}{Ctp\catppuccinpalette@style Yellow}
+\colorlet{CatError}{Ctp\catppuccinpalette@style Red}
+
+%    \end{macrocode}
+% New command which parses the same options like the package. Can be used to e.\,g.\, reset/reinit the selected style.
+%    \begin{macrocode}
+{{ '\NewDocumentCommand\CtpReinit{O{}}{%' }}
+	{{ '\pgfkeys{%' }}
+		/catppuccinPalette/.cd,%
+		#1%
+	}%
+%    \end{macrocode}
+% Define shortcuts for active style
+%    \begin{macrocode}
+	\colorlet{CtpRosewater}{Ctp\catppuccinpalette@style Rosewater}%
+	\colorlet{CtpFlamingo}{Ctp\catppuccinpalette@style Flamingo}%
+	\colorlet{CtpPink}{Ctp\catppuccinpalette@style Pink}%
+	\colorlet{CtpMauve}{Ctp\catppuccinpalette@style Mauve}%
+	\colorlet{CtpRed}{Ctp\catppuccinpalette@style Red}%
+	\colorlet{CtpMaroon}{Ctp\catppuccinpalette@style Maroon}%
+	\colorlet{CtpPeach}{Ctp\catppuccinpalette@style Peach}%
+	\colorlet{CtpYellow}{Ctp\catppuccinpalette@style Yellow}%
+	\colorlet{CtpGreen}{Ctp\catppuccinpalette@style Green}%
+	\colorlet{CtpTeal}{Ctp\catppuccinpalette@style Teal}%
+	\colorlet{CtpSky}{Ctp\catppuccinpalette@style Sky}%
+	\colorlet{CtpSapphire}{Ctp\catppuccinpalette@style Sapphire}%
+	\colorlet{CtpBlue}{Ctp\catppuccinpalette@style Blue}%
+	\colorlet{CtpLavender}{Ctp\catppuccinpalette@style Lavender}%
+	\colorlet{CtpText}{Ctp\catppuccinpalette@style Text}%
+	\colorlet{CtpSubtext1}{Ctp\catppuccinpalette@style Subtext1}%
+	\colorlet{CtpSubtext0}{Ctp\catppuccinpalette@style Subtext0}%
+	\colorlet{CtpOverlay2}{Ctp\catppuccinpalette@style Overlay2}%
+	\colorlet{CtpOverlay1}{Ctp\catppuccinpalette@style Overlay1}%
+	\colorlet{CtpOverlay0}{Ctp\catppuccinpalette@style Overlay0}%
+	\colorlet{CtpSurface2}{Ctp\catppuccinpalette@style Surface2}%
+	\colorlet{CtpSurface1}{Ctp\catppuccinpalette@style Surface1}%
+	\colorlet{CtpSurface0}{Ctp\catppuccinpalette@style Surface0}%
+	\colorlet{CtpBase}{Ctp\catppuccinpalette@style Base}%
+	\colorlet{CtpMantle}{Ctp\catppuccinpalette@style Mantle}%
+	\colorlet{CtpCrust}{Ctp\catppuccinpalette@style Crust}%
+	\colorlet{CtpBackground}{Ctp\catppuccinpalette@style Base}%
+	\colorlet{CtpLink}{Ctp\catppuccinpalette@style Blue}%
+	\colorlet{CtpSuccess}{Ctp\catppuccinpalette@style Green}%
+	\colorlet{CtpWarning}{Ctp\catppuccinpalette@style Yellow}%
+	\colorlet{CtpError}{Ctp\catppuccinpalette@style Red}%
+%    \end{macrocode}
+% Set pagecolor according to the style guide if the user wants this
+%    \begin{macrocode}
+\ifcatppuccinpalette@pagecolor%
+	\pagecolor{CtpBackground}%
+\fi%
+%    \end{macrocode}
+% Set textcolor according to the style guide if the user wants this
+%    \begin{macrocode}
+\ifcatppuccinpalette@textcolor%
+	\color{CtpText}%
+\fi%
+%    \end{macrocode}
+%    \begin{macrocode}
+}
+\CtpReinit[]
+%    \end{macrocode}
+\endinput
+%
+% \iffalse
+%</package>
+% \fi
+%
+% \Finale
+\endinput

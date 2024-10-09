@@ -1,0 +1,26 @@
+name: check whiskers
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Whiskers
+        run: |
+          wget -O "/usr/local/bin/whiskers" "https://github.com/catppuccin/whiskers/releases/download/v2.5.0/whiskers-x86_64-unknown-linux-gnu"
+          chmod +x /usr/local/bin/whiskers
+
+      - name: Generate dtx freshly
+        run: |
+          make whiskers
+
+      - name: Check if whisker generated same file
+        run: |
+          git diff --exit-code
