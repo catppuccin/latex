@@ -1,4 +1,4 @@
-name: package
+name: check whiskers
 
 on:
   push:
