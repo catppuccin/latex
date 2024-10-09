@@ -1,4 +1,4 @@
-.PHONY: clean ctan install
+.PHONY: clean ctan install whiskers
 
 catppuccinpalette.pdf: catppuccinpalette.dtx
 	l3build doc
@@ -17,3 +17,6 @@ catppuccinpalette-ctan.zip: catppuccinpalette.dtx
 
 install:
 	l3build install --full
+
+whiskers:
+	whiskers catppuccinpalette.dtx.tera > catppuccinpalette.dtx
