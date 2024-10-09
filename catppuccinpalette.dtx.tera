@@ -3,12 +3,17 @@ whiskers:
     version: "2.5.0"
     app: "LaTeX"
 version: 1.1.0
+versionDate:
+    year: 2024
+    month: 08
+    day: 13
+
 ---
 % \iffalse meta-comment
 %
 % MIT License
 % 
-% Copyright (c) {{ now() | date(format="%Y") }} Catppuccin
+% Copyright (c) {{ versionDate.year }} Catppuccin
 % 
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
@@ -37,7 +42,7 @@ version: 1.1.0
 %<package>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
 %<package>\ProvidesPackage{catppuccinpalette}
 %<*package>
-    [{{ now() | date(format="%Y/%m/%d") }} v{{ version }} catppuccin xcolor palette]
+    [{{versionDate.year}}/{{versionDate.month}}/{{versionDate.day}} v{{ version }} catppuccin xcolor palette]
 %</package>
 %
 %<*driver>
