@@ -19,4 +19,4 @@ install:
 	l3build install --full
 
 whiskers:
-	whiskers catppuccinpalette.dtx.tera > catppuccinpalette.dtx
+	whiskers latex.tera
