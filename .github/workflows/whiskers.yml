@@ -21,6 +21,6 @@ jobs:
         run: |
           make whiskers
 
-      - name: Check if whisker generated same file
+      - name: Check if whiskers generated same file
         run: |
           git diff --exit-code
