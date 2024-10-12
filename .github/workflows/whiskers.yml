@@ -17,10 +17,6 @@ jobs:
       	with:
       		whiskers-version: 2.5.0
 
-      - name: Generate dtx freshly
-        run: |
-          make whiskers
-
       - name: Check if whiskers generated same file
         run: |
-          git diff --exit-code
+          whiskers --check catppuccinpalette.dtx latex.tera
