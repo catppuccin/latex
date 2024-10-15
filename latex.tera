@@ -3,7 +3,7 @@ whiskers:
     version: "2.5.0"
     filename: "catppuccinpalette.dtx"
 
-version: 1.1.0
+version: 1.1.4
 versionDate:
     year: 2024
     month: 08
