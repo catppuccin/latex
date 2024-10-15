@@ -3,7 +3,7 @@ whiskers:
     version: "2.5.0"
     filename: "catppuccinpalette.dtx"
 
-version: 1.1.0
+packageVersion: 1.1.0
 versionDate:
     year: 2024
     month: 08
@@ -23,7 +23,7 @@ versionDate:
 %<package>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
 %<package>\ProvidesPackage{catppuccinpalette}
 %<*package>
-    [{{versionDate.year}}/{{versionDate.month}}/{{versionDate.day}} v{{ version }} catppuccin xcolor palette]
+    [{{versionDate.year}}/{{versionDate.month}}/{{versionDate.day}} v{{ packageVersion }} catppuccin xcolor palette]
 %</package>
 %
 %<*driver>
