@@ -1,0 +1,22 @@
+name: check whiskers
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Whiskers
+        uses: catppuccin/setup-whiskers@v1
+        with:
+          whiskers-version: 2.5.0
+
+      - name: Check if whiskers generated same file
+        run: |
+          whiskers --check catppuccinpalette.dtx latex.tera

@@ -93,7 +93,7 @@
 %
 % \section{Introduction}
 %
-% Catppuccin\footnote{\url{https://github.com/catppuccin/catppuccin}} is a nice
+% Catppuccin\footnote{\url{https://github.com/catppuccin/catppuccin}} is a soothing
 % pastel theme in 4 flavours/styles (\emph{Latte}, \emph{Frapp\'e},
 % \emph{Macchiato}, \emph{Mocha}). This package defines these themes as xcolor
 % colors.
@@ -158,52 +158,163 @@
 % \subsection{Colors}
 % \textbf{Note:} The colors with the prefix |Cat| are deprecated and will be removed in a future version!
 % \newcommand{\showCol}[1]{\raisebox{0.5ex}{\fcolorbox{black}{#1}{\hspace{1em}}} #1}
-% \foreach \Style in {Latte,Frappe,Macchiato,Mocha}{
-% \subsubsection{Style \texttt{\Style}}
+% \subsubsection{Style \texttt{Latte}}
 % \begin{multicols}{2}
-%  \showCol{Ctp\Style Blue}\par
-%  \showCol{Ctp\Style Rosewater}\par
-%  \showCol{Ctp\Style Flamingo}\par
-%  \showCol{Ctp\Style Pink}\par
-%  \showCol{Ctp\Style Mauve}\par
-%  \showCol{Ctp\Style Red}\par
-%  \showCol{Ctp\Style Maroon}\par
-%  \showCol{Ctp\Style Peach}\par
-%  \showCol{Ctp\Style Yellow}\par
-%  \showCol{Ctp\Style Green}\par
-%  \showCol{Ctp\Style Teal}\par
-%  \showCol{Ctp\Style Sky}\par
-%  \showCol{Ctp\Style Sapphire}\par
-%  \showCol{Ctp\Style Blue}\par
-%  \showCol{Ctp\Style Lavender}\par
-%  \showCol{Ctp\Style Text}\par
-%  \showCol{Ctp\Style Subtext1}\par
-%  \showCol{Ctp\Style Subtext0}\par
-%  \showCol{Ctp\Style Overlay2}\par
-%  \showCol{Ctp\Style Overlay1}\par
-%  \showCol{Ctp\Style Overlay0}\par
-%  \showCol{Ctp\Style Surface2}\par
-%  \showCol{Ctp\Style Surface1}\par
-%  \showCol{Ctp\Style Surface0}\par
-%  \showCol{Ctp\Style Base}\par
-%  \showCol{Ctp\Style Mantle}\par
-%  \showCol{Ctp\Style Crust}\par
+% \showCol{CtpLatteRosewater}\par
+% \showCol{CtpLatteFlamingo}\par
+% \showCol{CtpLattePink}\par
+% \showCol{CtpLatteMauve}\par
+% \showCol{CtpLatteRed}\par
+% \showCol{CtpLatteMaroon}\par
+% \showCol{CtpLattePeach}\par
+% \showCol{CtpLatteYellow}\par
+% \showCol{CtpLatteGreen}\par
+% \showCol{CtpLatteTeal}\par
+% \showCol{CtpLatteSky}\par
+% \showCol{CtpLatteSapphire}\par
+% \showCol{CtpLatteBlue}\par
+% \showCol{CtpLatteLavender}\par
+% \showCol{CtpLatteText}\par
+% \showCol{CtpLatteSubtext1}\par
+% \showCol{CtpLatteSubtext0}\par
+% \showCol{CtpLatteOverlay2}\par
+% \showCol{CtpLatteOverlay1}\par
+% \showCol{CtpLatteOverlay0}\par
+% \showCol{CtpLatteSurface2}\par
+% \showCol{CtpLatteSurface1}\par
+% \showCol{CtpLatteSurface0}\par
+% \showCol{CtpLatteBase}\par
+% \showCol{CtpLatteMantle}\par
+% \showCol{CtpLatteCrust}\par
 % \end{multicols}
-%
 % Some basic colors according to the style guide:
-%
 % \begin{multicols}{2}
-% \showCol{Ctp\Style Background}\par
-% \showCol{Ctp\Style Link}\par
+% \showCol{CtpLatteBackground}\par
+% \showCol{CtpLatteLink}\par
 % \phantom{}\par
 % \columnbreak
-% \showCol{Ctp\Style Success}\par
-% \showCol{Ctp\Style Warning}\par
-% \showCol{Ctp\Style Error}\par
+% \showCol{CtpLatteSuccess}\par
+% \showCol{CtpLatteWarning}\par
+% \showCol{CtpLatteError}\par
 % \end{multicols}
-%
-% }
-%
+% \subsubsection{Style \texttt{Frappe}}
+% \begin{multicols}{2}
+% \showCol{CtpFrappeRosewater}\par
+% \showCol{CtpFrappeFlamingo}\par
+% \showCol{CtpFrappePink}\par
+% \showCol{CtpFrappeMauve}\par
+% \showCol{CtpFrappeRed}\par
+% \showCol{CtpFrappeMaroon}\par
+% \showCol{CtpFrappePeach}\par
+% \showCol{CtpFrappeYellow}\par
+% \showCol{CtpFrappeGreen}\par
+% \showCol{CtpFrappeTeal}\par
+% \showCol{CtpFrappeSky}\par
+% \showCol{CtpFrappeSapphire}\par
+% \showCol{CtpFrappeBlue}\par
+% \showCol{CtpFrappeLavender}\par
+% \showCol{CtpFrappeText}\par
+% \showCol{CtpFrappeSubtext1}\par
+% \showCol{CtpFrappeSubtext0}\par
+% \showCol{CtpFrappeOverlay2}\par
+% \showCol{CtpFrappeOverlay1}\par
+% \showCol{CtpFrappeOverlay0}\par
+% \showCol{CtpFrappeSurface2}\par
+% \showCol{CtpFrappeSurface1}\par
+% \showCol{CtpFrappeSurface0}\par
+% \showCol{CtpFrappeBase}\par
+% \showCol{CtpFrappeMantle}\par
+% \showCol{CtpFrappeCrust}\par
+% \end{multicols}
+% Some basic colors according to the style guide:
+% \begin{multicols}{2}
+% \showCol{CtpFrappeBackground}\par
+% \showCol{CtpFrappeLink}\par
+% \phantom{}\par
+% \columnbreak
+% \showCol{CtpFrappeSuccess}\par
+% \showCol{CtpFrappeWarning}\par
+% \showCol{CtpFrappeError}\par
+% \end{multicols}
+% \subsubsection{Style \texttt{Macchiato}}
+% \begin{multicols}{2}
+% \showCol{CtpMacchiatoRosewater}\par
+% \showCol{CtpMacchiatoFlamingo}\par
+% \showCol{CtpMacchiatoPink}\par
+% \showCol{CtpMacchiatoMauve}\par
+% \showCol{CtpMacchiatoRed}\par
+% \showCol{CtpMacchiatoMaroon}\par
+% \showCol{CtpMacchiatoPeach}\par
+% \showCol{CtpMacchiatoYellow}\par
+% \showCol{CtpMacchiatoGreen}\par
+% \showCol{CtpMacchiatoTeal}\par
+% \showCol{CtpMacchiatoSky}\par
+% \showCol{CtpMacchiatoSapphire}\par
+% \showCol{CtpMacchiatoBlue}\par
+% \showCol{CtpMacchiatoLavender}\par
+% \showCol{CtpMacchiatoText}\par
+% \showCol{CtpMacchiatoSubtext1}\par
+% \showCol{CtpMacchiatoSubtext0}\par
+% \showCol{CtpMacchiatoOverlay2}\par
+% \showCol{CtpMacchiatoOverlay1}\par
+% \showCol{CtpMacchiatoOverlay0}\par
+% \showCol{CtpMacchiatoSurface2}\par
+% \showCol{CtpMacchiatoSurface1}\par
+% \showCol{CtpMacchiatoSurface0}\par
+% \showCol{CtpMacchiatoBase}\par
+% \showCol{CtpMacchiatoMantle}\par
+% \showCol{CtpMacchiatoCrust}\par
+% \end{multicols}
+% Some basic colors according to the style guide:
+% \begin{multicols}{2}
+% \showCol{CtpMacchiatoBackground}\par
+% \showCol{CtpMacchiatoLink}\par
+% \phantom{}\par
+% \columnbreak
+% \showCol{CtpMacchiatoSuccess}\par
+% \showCol{CtpMacchiatoWarning}\par
+% \showCol{CtpMacchiatoError}\par
+% \end{multicols}
+% \subsubsection{Style \texttt{Mocha}}
+% \begin{multicols}{2}
+% \showCol{CtpMochaRosewater}\par
+% \showCol{CtpMochaFlamingo}\par
+% \showCol{CtpMochaPink}\par
+% \showCol{CtpMochaMauve}\par
+% \showCol{CtpMochaRed}\par
+% \showCol{CtpMochaMaroon}\par
+% \showCol{CtpMochaPeach}\par
+% \showCol{CtpMochaYellow}\par
+% \showCol{CtpMochaGreen}\par
+% \showCol{CtpMochaTeal}\par
+% \showCol{CtpMochaSky}\par
+% \showCol{CtpMochaSapphire}\par
+% \showCol{CtpMochaBlue}\par
+% \showCol{CtpMochaLavender}\par
+% \showCol{CtpMochaText}\par
+% \showCol{CtpMochaSubtext1}\par
+% \showCol{CtpMochaSubtext0}\par
+% \showCol{CtpMochaOverlay2}\par
+% \showCol{CtpMochaOverlay1}\par
+% \showCol{CtpMochaOverlay0}\par
+% \showCol{CtpMochaSurface2}\par
+% \showCol{CtpMochaSurface1}\par
+% \showCol{CtpMochaSurface0}\par
+% \showCol{CtpMochaBase}\par
+% \showCol{CtpMochaMantle}\par
+% \showCol{CtpMochaCrust}\par
+% \end{multicols}
+% Some basic colors according to the style guide:
+% \begin{multicols}{2}
+% \showCol{CtpMochaBackground}\par
+% \showCol{CtpMochaLink}\par
+% \phantom{}\par
+% \columnbreak
+% \showCol{CtpMochaSuccess}\par
+% \showCol{CtpMochaWarning}\par
+% \showCol{CtpMochaError}\par
+% \end{multicols}
+
 %
 % \StopEventually{}
 %
@@ -259,6 +370,7 @@
 }
 \ProcessPgfOptions{catppuccinPalette}
 %    \end{macrocode}
+
 % Define the \emph{Latte} colorset
 %    \begin{macrocode}
 \preparecolorset{RGB/HTML}{CatLatte}{}{%
@@ -332,7 +444,8 @@
 \colorlet{CtpLatteWarning}{CtpLatteYellow}
 \colorlet{CtpLatteError}{CtpLatteRed}
 %    \end{macrocode}
-% Define the styles \emph{Frappe}, \emph{Macchiato} and \emph{Mocha} accordingly
+
+% Define the \emph{Frappe} colorset
 %    \begin{macrocode}
 \preparecolorset{RGB/HTML}{CatFrappe}{}{%
 	Rosewater,242,213,207/F2D5CF;%
@@ -396,12 +509,18 @@
 	Mantle,41,44,60/292C3C;%
 	Crust,35,38,52/232634%
 }
+%    \end{macrocode}
+% Define colors according to the catppuccin style guide
+%    \begin{macrocode}
 \colorlet{CtpFrappeBackground}{CtpFrappeBase}
 \colorlet{CtpFrappeLink}{CtpFrappeBlue}
 \colorlet{CtpFrappeSuccess}{CtpFrappeGreen}
 \colorlet{CtpFrappeWarning}{CtpFrappeYellow}
 \colorlet{CtpFrappeError}{CtpFrappeRed}
+%    \end{macrocode}
 
+% Define the \emph{Macchiato} colorset
+%    \begin{macrocode}
 \preparecolorset{RGB/HTML}{CatMacchiato}{}{%
 	Rosewater,244,219,214/F4DBD6;%
 	Flamingo,240,198,198/F0C6C6;%
@@ -464,12 +583,18 @@
 	Mantle,30,32,48/1E2030;%
 	Crust,24,25,38/181926%
 }
+%    \end{macrocode}
+% Define colors according to the catppuccin style guide
+%    \begin{macrocode}
 \colorlet{CtpMacchiatoBackground}{CtpMacchiatoBase}
 \colorlet{CtpMacchiatoLink}{CtpMacchiatoBlue}
 \colorlet{CtpMacchiatoSuccess}{CtpMacchiatoGreen}
 \colorlet{CtpMacchiatoWarning}{CtpMacchiatoYellow}
 \colorlet{CtpMacchiatoError}{CtpMacchiatoRed}
+%    \end{macrocode}
 
+% Define the \emph{Mocha} colorset
+%    \begin{macrocode}
 \preparecolorset{RGB/HTML}{CatMocha}{}{%
 	Rosewater,245,224,220/F5E0DC;%
 	Flamingo,242,205,205/F2CDCD;%
@@ -532,13 +657,16 @@
 	Mantle,24,24,37/181825;%
 	Crust,17,17,27/11111B%
 }
+%    \end{macrocode}
+% Define colors according to the catppuccin style guide
+%    \begin{macrocode}
 \colorlet{CtpMochaBackground}{CtpMochaBase}
 \colorlet{CtpMochaLink}{CtpMochaBlue}
 \colorlet{CtpMochaSuccess}{CtpMochaGreen}
 \colorlet{CtpMochaWarning}{CtpMochaYellow}
 \colorlet{CtpMochaError}{CtpMochaRed}
-
 %    \end{macrocode}
+
 % Define shortcuts for active style (legacy part)
 %    \begin{macrocode}
 \colorlet{CatRosewater}{Ctp\catppuccinpalette@style Rosewater}
