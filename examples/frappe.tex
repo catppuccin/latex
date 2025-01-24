@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt,a4paper]{article}
 
 % Imports the catppuccin theme, using the frappe flavor,
 % from the directory above. Actual implementation
@@ -6,6 +6,8 @@
 % and the document are in different directories.
 \usepackage{import}
 \usepackage[frappe,styleAll]{catppuccinpalette}
+
+\usepackage{hyperref}
 
 % Removes padding above title
 \usepackage{titling}
@@ -23,25 +25,25 @@
 % Add code highlighting specific for my Ruby on Rails snippet
 % You'd want to follow something similar below to add your own keyword highlighting
 \lstdefinestyle{ruby_on_rails}{
-  language={Ruby},
-  breaklines=true,
-  showstringspaces=false,
-  breakatwhitespace=true,
-  stringstyle = {\color{CtpGreen}},
-  commentstyle={\color{CtpOverlay1}},
-  basicstyle = {\small\color{CtpText}\ttfamily},
-  keywordstyle = {\color{CtpMauve}},
-  keywordstyle = [2]{\color{CtpBlue}},
-  keywordstyle = [3]{\color{CtpYellow}},
-  keywordstyle = [4]{\color{CtpLavender}},
-  keywordstyle = [5]{\color{CtpPeach}},
-  keywordstyle = [6]{\color{CtpTeal}},
-  otherkeywords = {<, ||, =, ?},
-  morekeywords = [2]{new, create, present, email, description, creator, protect_from_forgery, before_action},
-  morekeywords = [3]{PageController, ApplicationController, Page},
-  morekeywords = [4]{@page},
-  morekeywords = [5]{exception, do_some_for_pages, @page, @admin},
-  morekeywords = [6]{<, ||, =, ?},
+	language={Ruby},
+	breaklines=true,
+	showstringspaces=false,
+	breakatwhitespace=true,
+	stringstyle = {\color{CtpGreen}},
+	commentstyle={\color{CtpOverlay1}},
+	basicstyle = {\footnotesize\color{CtpText}\ttfamily},
+	keywordstyle = {\color{CtpMauve}},
+	keywordstyle = [2]{\color{CtpBlue}},
+	keywordstyle = [3]{\color{CtpYellow}},
+	keywordstyle = [4]{\color{CtpLavender}},
+	keywordstyle = [5]{\color{CtpPeach}},
+	keywordstyle = [6]{\color{CtpTeal}},
+	otherkeywords = {<, ||, =, ?},
+	morekeywords = [2]{new, create, present, email, description, creator, protect_from_forgery, before_action},
+	morekeywords = [3]{PageController, ApplicationController, Page},
+	morekeywords = [4]{@page},
+	morekeywords = [5]{exception, do_some_for_pages, @page, @admin},
+	morekeywords = [6]{<, ||, =, ?},
 }
 
 % Set the title and author, utilizing CtpPink
@@ -55,17 +57,41 @@
 
 \section{\textcolor{CtpSky}{Simple Paragraph}}
 \textcolor{CtpYellow}{This is what a simple paragraph looks like.} You can see that all the colors in this pallet complement each other and maintain an elegance all within the same proximity. The default text color is called \textbf{\textcolor{CtpGreen}{CtpText}} while the background color is called \textbf{\textcolor{CtpGreen}{CtpBase}}.
+\\
 
-\section{\textcolor{CtpSky}{Math}}
+\begin{minipage}{0.47\linewidth}
+	\section{\textcolor{CtpSky}{Hyperref}}
+	(internal) Link: \pageref{l}
 
-You even can make math formulas, equations, and examples look nicer and more legible:
+	Citation: \cite{bb}
+
+	File: \href{file:///home/second_user}{goto file}
+
+	Menu: Only in Acrobat menu items
+
+	Run: no idea where this color is used
+
+	Url: \url{https://github.com}
+
+	\label{l}
+	\begin{thebibliography}{2}
+		\bibitem{bb} example bib item.
+	\end{thebibliography}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}{0.47\linewidth}
+	\section{\textcolor{CtpSky}{Math}}
+
+	You even can make math formulas, equations, and examples look nicer and more legible:
 
 
-\[\large{
-    \textcolor{CtpBlue}{\lim_{{n \to \infty}} \textcolor{CtpPeach}{\int_{\textcolor{CtpRed}{a}}^{\textcolor{CtpRed}{b}} \frac{\textcolor{CtpGreen}{\sin}(\textcolor{CtpYellow}{nx})}{\textcolor{CtpYellow}{x}} \, \textcolor{CtpTeal}{dx}}}
-}\]
+	\[\large{
+		\textcolor{CtpBlue}{\lim_{{n \to \infty}} \textcolor{CtpPeach}{\int_{\textcolor{CtpRed}{a}}^{\textcolor{CtpRed}{b}} \frac{\textcolor{CtpGreen}{\sin}(\textcolor{CtpYellow}{nx})}{\textcolor{CtpYellow}{x}} \, \textcolor{CtpTeal}{dx}}}
+	}\]
 
-\tiny{(Or just color dump like I did)}
+	\tiny{(Or just color dump like I did)}
+\end{minipage}
+\\
 
 \section{\textcolor{CtpSky}{Code Snippets}}
 
