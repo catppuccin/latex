@@ -1,4 +1,4 @@
-STYLES := frappe latte macchiato mocha
+STYLES := latte frappe macchiato mocha
 
 .PHONY: all clean distclean
 
