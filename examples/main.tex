@@ -1,11 +1,11 @@
 \documentclass[12pt,a4paper]{article}
 
-% Imports the catppuccin theme, using the macchiato flavor,
+% Imports the catppuccin theme, using the latte flavor,
 % from the directory above. Actual implementation
 % wouldn't need the import package unless the theme
 % and the document are in different directories.
 \usepackage{import}
-\usepackage[macchiato,styleAll]{catppuccinPalette}
+\usepackage[\jobname,styleAll]{catppuccinpalette}
 
 \usepackage{hyperref}
 
@@ -25,25 +25,25 @@
 % Add code highlighting specific for my Ruby on Rails snippet
 % You'd want to follow something similar below to add your own keyword highlighting
 \lstdefinestyle{ruby_on_rails}{
-  language={Ruby},
-  breaklines=true,
-  showstringspaces=false,
-  breakatwhitespace=true,
-  stringstyle = {\color{CtpGreen}},
-  commentstyle={\color{CtpOverlay1}},
-  basicstyle = {\footnotesize\color{CtpText}\ttfamily},
-  keywordstyle = {\color{CtpMauve}},
-  keywordstyle = [2]{\color{CtpBlue}},
-  keywordstyle = [3]{\color{CtpYellow}},
-  keywordstyle = [4]{\color{CtpLavender}},
-  keywordstyle = [5]{\color{CtpPeach}},
-  keywordstyle = [6]{\color{CtpTeal}},
-  otherkeywords = {<, ||, =, ?},
-  morekeywords = [2]{new, create, present, email, description, creator, protect_from_forgery, before_action},
-  morekeywords = [3]{PageController, ApplicationController, Page},
-  morekeywords = [4]{@page},
-  morekeywords = [5]{exception, do_some_for_pages, @page, @admin},
-  morekeywords = [6]{<, ||, =, ?},
+	language={Ruby},
+	breaklines=true,
+	showstringspaces=false,
+	breakatwhitespace=true,
+	stringstyle = {\color{CtpGreen}},
+	commentstyle={\color{CtpOverlay1}},
+	basicstyle = {\footnotesize\color{CtpText}\ttfamily},
+	keywordstyle = {\color{CtpMauve}},
+	keywordstyle = [2]{\color{CtpBlue}},
+	keywordstyle = [3]{\color{CtpYellow}},
+	keywordstyle = [4]{\color{CtpLavender}},
+	keywordstyle = [5]{\color{CtpPeach}},
+	keywordstyle = [6]{\color{CtpTeal}},
+	otherkeywords = {<, ||, =, ?},
+	morekeywords = [2]{new, create, present, email, description, creator, protect_from_forgery, before_action},
+	morekeywords = [3]{PageController, ApplicationController, Page},
+	morekeywords = [4]{@page},
+	morekeywords = [5]{exception, do_some_for_pages, @page, @admin},
+	morekeywords = [6]{<, ||, =, ?},
 }
 
 % Set the title and author, utilizing CtpPink
