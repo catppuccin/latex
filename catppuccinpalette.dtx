@@ -136,9 +136,16 @@
 %   \verb|pagecolor| &
 %   set the pagecolor of the document to \verb|CtpBackground|. Possible values:
 %   \verb|false| (default+initial), \verb|true|
+%   \\
+%   \verb|hyperref| &
+%   style hyperref according to the style guide\footnote{\url{https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md\#typography}}.
+%   Possible values: \verb|false| (initial), \verb|true| (default)
+%   \newline
+%   \textbf{Note:} in order to make this work, \verb|catppuccinpalette| needs to
+%   be loaded \emph{before} the \verb|hyperref| package.
 %   \\\midrule
 %   \verb|styleAll| &
-%   shortcut for setting \verb|pagecolor| and \verb|textcolor|
+%   shortcut for setting \verb|pagecolor|, \verb|textcolor| and \verb|hyperref|
 %   \\\bottomrule
 % \end{tabularx}
 %
@@ -333,6 +340,7 @@
 %    \begin{macrocode}
 \newif\ifcatppuccinpalette@pagecolor
 \newif\ifcatppuccinpalette@textcolor
+\newif\ifcatppuccinpalette@hyperref
 \pgfkeys{
 	/catppuccinPalette/.cd,
 %    \end{macrocode}
@@ -358,13 +366,16 @@
 	style/mocha/.style = {style=Mocha},
 	textcolor/.is if = catppuccinpalette@textcolor,
 	textcolor/.default = true,
+	hyperref/.is if = catppuccinpalette@hyperref,
+	hyperref/.default = true,
 	pagecolor/.is if = catppuccinpalette@pagecolor,
 	pagecolor/.default = true,
-	styleAll/.style = {pagecolor,textcolor},
+	styleAll/.style = {pagecolor,textcolor,hyperref},
 %    \end{macrocode}
 % Set initial values for all options
 %    \begin{macrocode}
 	textcolor = false,
+	hyperref  = false,
 	pagecolor = false,
 	style = Latte,
 }
@@ -754,6 +765,15 @@
 %    \begin{macrocode}
 \ifcatppuccinpalette@textcolor%
 	\color{CtpText}%
+\fi%
+%    \end{macrocode}
+% Style hyerref according to the styleguide\footnote{\url{https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md\#typography}} if the user wants it
+%    \begin{macrocode}
+\ifcatppuccinpalette@hyperref%
+	\PassOptionsToPackage{
+		linkcolor=CtpBlue,citecolor=CtpGreen,filecolor=CtpSky,menucolor=CtpBlue,runcolor=CtpSky,urlcolor=CtpSapphire,%
+		linkbordercolor=CtpBlue,citebordercolor=CtpGreen,filebordercolor=CtpSky,menubordercolor=CtpBlue,runbordercolor=CtpSky,urlbordercolor=CtpSapphire,%
+	}{hyperref}%
 \fi%
 %    \end{macrocode}
 %    \begin{macrocode}
