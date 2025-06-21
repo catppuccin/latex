@@ -16,11 +16,15 @@ jobs:
           sudo apt install texlive-latex-extra
 
       - name: make
-        run: make ctan
+        run: |
+          make -C catppuccinpalette ctan
+          make -C beamercolorthemecatppuccin ctan
 
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            catppuccinpalette-ctan.zip
-            build/unpacked/catppuccinpalette.sty
+            catppuccinpalette/catppuccinpalette-ctan.zip
+            catppuccinpalette/build/unpacked/catppuccinpalette.sty
+            beamercolorthemecatppuccin/beamercolorthemecatppuccin-ctan.zip
+            beamercolorthemecatppuccin/build/unpacked/beamercolorthemecatppuccin.sty

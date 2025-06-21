@@ -13,4 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: catppuccin/setup-whiskers@v2
-      - run: whiskers --check catppuccinpalette.dtx latex.tera
+      - run: whiskers --check catppuccinpalette/catppuccinpalette.dtx catppuccinpalette/latex.tera

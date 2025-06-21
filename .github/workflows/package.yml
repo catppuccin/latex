@@ -17,18 +17,18 @@ jobs:
           sudo apt install texlive-latex-extra
 
       - name: make
-        run: make ctan
+        run: make -C catppuccinpalette ctan
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4.6.2
         with:
           name: ctan-package
           path: |
-            catppuccinpalette-ctan.zip
+            catppuccinpalette/catppuccinpalette-ctan.zip
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4.6.2
         with:
           name: catppuccinpalette.sty
           path: |
-            build/unpacked/catppuccinpalette.sty
+            catppuccinpalette/build/unpacked/catppuccinpalette.sty
