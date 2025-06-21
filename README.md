@@ -12,7 +12,11 @@
 </p>
 
 <p align="center">
-	<img src="assets/preview.webp"/>
+	<img src="catppuccinpalette/assets/preview.webp"/>
+</p>
+
+<p align="center">
+	<img src="beamercolorthemecatppuccin/assets/preview.webp"/>
 </p>
 
 ## xcolortheme
@@ -21,19 +25,19 @@
 
 <details>
 <summary>🌻 Latte</summary>
-<img src="assets/latte.webp"/>
+<img src="catppuccinpalette/assets/latte.webp"/>
 </details>
 <details>
 <summary>🪴 Frappé</summary>
-<img src="assets/frappe.webp"/>
+<img src="catppuccinpalette/assets/frappe.webp"/>
 </details>
 <details>
 <summary>🌺 Macchiato</summary>
-<img src="assets/macchiato.webp"/>
+<img src="catppuccinpalette/assets/macchiato.webp"/>
 </details>
 <details>
 <summary>🌿 Mocha</summary>
-<img src="assets/mocha.webp"/>
+<img src="catppuccinpalette/assets/mocha.webp"/>
 </details>
 
 ### Usage
@@ -57,19 +61,19 @@ All [Catppuccin palette colors](https://github.com/catppuccin/catppuccin#-palett
 
 <details>
 <summary>🌻 Latte</summary>
-<img src="assets/beamer-latte.webp"/>
+<img src="beamercolorthemecatppuccin/assets/Latte.webp"/>
 </details>
 <details>
 <summary>🪴 Frappé</summary>
-<img src="assets/beamer-frappe.webp"/>
+<img src="beamercolorthemecatppuccin/assets/Frappe.webp"/>
 </details>
 <details>
 <summary>🌺 Macchiato</summary>
-<img src="assets/beamer-macchiato.webp"/>
+<img src="beamercolorthemecatppuccin/assets/Macchiato.webp"/>
 </details>
 <details>
 <summary>🌿 Mocha</summary>
-<img src="assets/beamer-mocha.webp"/>
+<img src="beamercolorthemecatppuccin/assets/Mocha.webp"/>
 </details>
 
 ### Usage
