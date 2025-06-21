@@ -17,7 +17,9 @@ jobs:
           sudo apt install texlive-latex-extra
 
       - name: make
-        run: make -C catppuccinpalette ctan
+        run: |
+          make -C catppuccinpalette ctan
+          make -C beamercolorthemecatppuccin ctan
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4.6.2
@@ -32,3 +34,17 @@ jobs:
           name: catppuccinpalette.sty
           path: |
             catppuccinpalette/build/unpacked/catppuccinpalette.sty
+
+      - name: Upload Beamer Build Artifacts
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: beamer-ctan-package
+          path: |
+            beamercolorthemecatppuccin/beamercolorthemecatppuccin-ctan.zip
+
+      - name: Upload Beamer Build Artifacts
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: beamercolorthemecatppuccin.sty
+          path: |
+            beamercolorthemecatppuccin/build/unpacked/beamercolorthemecatppuccin.sty
