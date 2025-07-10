@@ -32,3 +32,10 @@ jobs:
           name: catppuccinpalette.sty
           path: |
             build/unpacked/catppuccinpalette.sty
+
+      - name: Upload Build Artifacts (2)
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: beamercolorthemecatppuccin.sty
+          path: |
+            build/unpacked/beamercolorthemecatppuccin.sty
