@@ -54,6 +54,11 @@ All [Catppuccin palette colors](https://github.com/catppuccin/catppuccin#-palett
 Catppuccinpalette also provides a colorscheme which can be loaded in latex
 beamer e.g. via `\usecolortheme[style=Latte, accent=Blue]{catppuccin}`
 
+<details>
+<summary>🪴 Frappé Example</summary>
+<img src="assets/beamer.webp"/>
+</details>
+
 #### hyperref
 If you want to `catppuccinpalette` can redefine some colors hyperref uses for
 highlighting links according to the catppuccin style guide. For this you only
