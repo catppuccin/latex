@@ -9,4 +9,8 @@ build/
 *.fls
 *.log
 *.out
+*.nav
+*.snm
+*.toc
 *.synctex.gz
+*_*.webp
