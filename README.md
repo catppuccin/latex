@@ -49,6 +49,16 @@
 
 All [Catppuccin palette colors](https://github.com/catppuccin/catppuccin#-palette), across all flavors, follow the same naming convention. This theme set prefixes all Catppuccin colors with `Ctp`, i.e. `CtpPeach`, or `CtpBlue`. 
 
+### Support for special latex packages/classes
+#### beamer
+Catppuccinpalette also provides a colorscheme which can be loaded in latex
+beamer e.g. via `\usecolortheme[style=Latte, accent=Blue]{catppuccin}`
+
+#### hyperref
+If you want to `catppuccinpalette` can redefine some colors hyperref uses for
+highlighting links according to the catppuccin style guide. For this you only
+need to pass `hyperref=true` to `\usepackage{catppuccinpalette}` (after
+`hyperref` has been loaded)
 
 ### Examples
 
