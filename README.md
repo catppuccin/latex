@@ -69,6 +69,17 @@ need to pass `hyperref=true` to `\usepackage{catppuccinpalette}` (after
 
 Please refer to the [examples](https://github.com/catppuccin/latex/tree/main/examples) for full demonstrations, with LaTeX sources and their outputs, on theme usage and code highlighting.
 
+## Developing
+<details>
+<summary>How to do a new release</summary>
+
+1. adjust the version tag in the `latex.tera` and `beamercolorthemecatppuccin.dtx` files
+2. add the changelog entry also in those two files (I'd say we just skip the entry if for the specific package/file nothing was changed now that we have two packages/files)
+3. run `make whiskers`
+4. PR -> merge -> tag the commit (conforming to `"v*.*.*"` and the release will be created automatically)
+
+</details>
+
 ## 💝 Thanks to
 
 - [Lukas](https://github.com/atticus-sullivan)
