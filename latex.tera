@@ -3,11 +3,11 @@ whiskers:
     version: ^2.5.1
     filename: "catppuccinpalette.dtx"
 
-packageVersion: 1.1.0
+packageVersion: 1.2.0
 versionDate:
-    year: 2024
-    month: 08
-    day: 13
+    year: 2025
+    month: 07
+    day: 19
 
 ---
 % \iffalse meta-comment
@@ -67,6 +67,7 @@ versionDate:
 % \changes{v1.0.1}{2024/05/19}{Make fit for CTAN}
 % \changes{v1.0.2}{2024/05/19}{Fix colors in documentation}
 % \changes{v1.1.0}{2024/08/13}{Move to / Merge with official catppuccin. Thereby deprecate colors with |Cat| prefix. Subject to removal in the future}
+% \changes{v1.2.0}{2025/07/19}{Add suport for beamer}
 %
 % \DoNotIndex{\newcommand,\newenvironment,\color,\colorlet,\def,\fi,\RequirePackage,\ProvidesPackage,\ProcessPgfOptions,\preparecolorset,\pgfkeys,\pagecolor,\newif,\NeedsTeXFormat}
 %
