@@ -134,11 +134,19 @@ versionDate:
 %   style hyperref according to the style guide\footnote{\url{https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md\#typography}}.
 %   Possible values: \verb|false| (initial), \verb|true| (default)
 %   \newline
-%   \textbf{Note:} in order to make this work, \verb|catppuccinpalette| needs to
+%   \textbf{Note:} In order to make this work, \verb|catppuccinpalette| needs to
 %   be loaded \emph{before} the \verb|hyperref| package.
+%   \\
+%   \verb|listings| &
+%   style listings according to the style guide\footnote{\url{https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md\#code-editors}}.
+%   Possible values: \verb|false| (initial), \verb|true| (default)
+%   \newline
+%   \textbf{Note:} In order to make this work, \verb|catppuccinpalette| needs to
+%   be loaded \emph{after} the \verb|listings| package.
 %   \\\midrule
 %   \verb|styleAll| &
-%   shortcut for setting \verb|pagecolor|, \verb|textcolor| and \verb|hyperref|
+%   shortcut for setting \verb|pagecolor|, \verb|textcolor|, \verb|listings|
+%   and \verb|hyperref|
 %   \\\bottomrule
 % \end{tabularx}
 %
@@ -154,6 +162,35 @@ versionDate:
 %
 % The command processes the same options like the ones you can pass when
 % loading the package (see documentation above).
+%
+% \subsection{Package specific notes}
+% \subsubsection{listings}
+% With the \verb|listings| option set, this package adjusts the listings
+% settings in order to conform to the style guide
+% \footnote{\url{https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md\#code-editors}}.
+%
+% Still, the highlighting setup is only quite rudimentary. If the chosen
+% listings language splits the keywords in multiple groups, like keywords and
+% builtins, the highlighting can be improved (manually). There is no
+% standardization here though, which is why this package cannot do more sadly.
+%
+% The codesnippet shown in the examples
+% \footnote{\url{https://github.com/catppuccin/latex/tree/main/examples}} for
+% example do this by setting the following keys (with a custom language or with
+% \verb|\lstset| globally) manually in addition to what this package does:
+%
+% \noindent
+% | keywordstyle  = [2]{\color{CtpBlue}}, |\\
+% | keywordstyle  = [3]{\color{CtpYellow}}, |\\
+% | keywordstyle  = [4]{\color{CtpLavender}}, |\\
+% | keywordstyle  = [5]{\color{CtpPeach}}, |\\
+% | keywordstyle  = [6]{\color{CtpTeal}}, |\\
+% | otherkeywords = {<, =, ?}, |\\
+% | morekeywords  = [2]{new, create, present, email, description, ...}, |\\
+% | morekeywords  = [3]{PageController, ApplicationController, Page}, |\\
+% | morekeywords  = [4]{@page}, |\\
+% | morekeywords  = [5]{exception, do_some_for_pages, @page, @admin}, |\\
+% | morekeywords  = [6]{<, ||, =, ?}, |\\
 %
 % \subsection{Colors}
 % \textbf{Note:} The colors with the prefix |Cat| are deprecated and will be removed in a future version!
@@ -192,6 +229,7 @@ versionDate:
 \newif\ifcatppuccinpalette@pagecolor
 \newif\ifcatppuccinpalette@textcolor
 \newif\ifcatppuccinpalette@hyperref
+\newif\ifcatppuccinpalette@listings
 \pgfkeys{
 	/catppuccinPalette/.cd,
 %    \end{macrocode}
@@ -219,14 +257,17 @@ versionDate:
 	textcolor/.default = true,
 	hyperref/.is if = catppuccinpalette@hyperref,
 	hyperref/.default = true,
+	listings/.is if = catppuccinpalette@listings,
+	listings/.default = true,
 	pagecolor/.is if = catppuccinpalette@pagecolor,
 	pagecolor/.default = true,
-	styleAll/.style = {pagecolor,textcolor,hyperref},
+	styleAll/.style = {pagecolor,textcolor,hyperref,listings},
 %    \end{macrocode}
 % Set initial values for all options
 %    \begin{macrocode}
 	textcolor = false,
 	hyperref  = false,
+	listings  = false,
 	pagecolor = false,
 	style = Latte,
 }
@@ -346,13 +387,34 @@ versionDate:
 	\color{CtpText}%
 \fi%
 %    \end{macrocode}
-% Style hyerref according to the styleguide\footnote{\url{https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md\#typography}} if the user wants it
+% Style hyperref\footnote{\url{https://ctan.org/pkg/hyperref}} according to the
+% styleguide\footnote{\url{https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md\#typography}}
+% if the user wants it.
 %    \begin{macrocode}
 \ifcatppuccinpalette@hyperref%
 	\PassOptionsToPackage{
 		linkcolor=CtpBlue,citecolor=CtpGreen,filecolor=CtpSky,menucolor=CtpBlue,runcolor=CtpSky,urlcolor=CtpSapphire,%
 		linkbordercolor=CtpBlue,citebordercolor=CtpGreen,filebordercolor=CtpSky,menubordercolor=CtpBlue,runbordercolor=CtpSky,urlbordercolor=CtpSapphire,%
 	}{hyperref}%
+\fi%
+%    \end{macrocode}
+%    \begin{macrocode}
+%    \end{macrocode}
+% Style listings\footnote{\url{https://ctan.org/pkg/listings}} according to the
+% styleguide\footnote{\url{https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md\#code-editors}}
+% if the user wants it. Though, as listings e\,.g.\,does not know a standardized
+% group for \emph{builtins} this can only offer a rudimentary highlighting. In
+% case the listing language definition breaks keywords in multiple groups, a
+% more fine grained highlighting is possible.
+%    \begin{macrocode}
+\ifcatppuccinpalette@listings%
+	\lstset{
+		emphstyle=\color{CtpYellow},
+		stringstyle=\color{CtpGreen},
+		commentstyle=\color{CtpOverlay2},
+		keywordstyle=\color{CtpMauve},
+		backgroundcolor=\color{CtpBase},
+	}%
 \fi%
 %    \end{macrocode}
 %    \begin{macrocode}
