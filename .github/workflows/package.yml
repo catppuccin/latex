@@ -21,21 +21,21 @@ jobs:
         run: make ctan
 
       - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v7.0.0
         with:
           name: ctan-package
           path: |
             catppuccinpalette-ctan.zip
 
       - name: Upload Build Artifacts for package providing the colors
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v7.0.0
         with:
           name: catppuccinpalette.sty
           path: |
             build/unpacked/catppuccinpalette.sty
 
       - name: Upload Build Artifacts for beamer color theme package
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v7.0.0
         with:
           name: beamercolorthemecatppuccin.sty
           path: |
