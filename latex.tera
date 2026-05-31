@@ -131,8 +131,8 @@ versionDate:
 %   style hyperref according to the style guide\footnote{\url{https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md\#typography}}.
 %   Possible values: \verb|false| (initial), \verb|true| (default)
 %   \newline
-%   \textbf{Note:} in order to make this work, \verb|catppuccinpalette| needs to
-%   be loaded \emph{before} the \verb|hyperref| package.
+%   \textbf{Note:} Setting the \texttt{hyperref} options is deferred until the \texttt{\textbackslash begin\{document\}}.
+%   Thus, if you want to override some of the settings done by this package, you need to do this for example as follows: \verb|\AddToHook{begindocument/before}{\hypersetup{linkcolor=green}}|
 %   \\\midrule
 %   \verb|styleAll| &
 %   shortcut for setting \verb|pagecolor|, \verb|textcolor| and \verb|hyperref|
@@ -346,10 +346,12 @@ versionDate:
 % Style hyerref according to the styleguide\footnote{\url{https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md\#typography}} if the user wants it
 %    \begin{macrocode}
 \ifcatppuccinpalette@hyperref%
-	\PassOptionsToPackage{
-		linkcolor=CtpBlue,citecolor=CtpGreen,filecolor=CtpSky,menucolor=CtpBlue,runcolor=CtpSky,urlcolor=CtpSapphire,%
-		linkbordercolor=CtpBlue,citebordercolor=CtpGreen,filebordercolor=CtpSky,menubordercolor=CtpBlue,runbordercolor=CtpSky,urlbordercolor=CtpSapphire,%
-	}{hyperref}%
+	\AddToHook{begindocument/before}{%
+		\hypersetup{%
+			linkcolor=CtpBlue,citecolor=CtpGreen,filecolor=CtpSky,menucolor=CtpBlue,runcolor=CtpSky,urlcolor=CtpSapphire,%
+			linkbordercolor=CtpBlue,citebordercolor=CtpGreen,filebordercolor=CtpSky,menubordercolor=CtpBlue,runbordercolor=CtpSky,urlbordercolor=CtpSapphire,%
+		}%
+	}%
 \fi%
 %    \end{macrocode}
 %    \begin{macrocode}
