@@ -346,12 +346,12 @@ versionDate:
 % Style hyerref according to the styleguide\footnote{\url{https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md\#typography}} if the user wants it
 %    \begin{macrocode}
 \ifcatppuccinpalette@hyperref%
-	\AddToHook{begindocument/before}{%
-		\hypersetup{%
+	\AddToHook{begindocument/before}{{ '{%' }}
+		\hypersetup{{ '{%' }}
 			linkcolor=CtpBlue,citecolor=CtpGreen,filecolor=CtpSky,menucolor=CtpBlue,runcolor=CtpSky,urlcolor=CtpSapphire,%
 			linkbordercolor=CtpBlue,citebordercolor=CtpGreen,filebordercolor=CtpSky,menubordercolor=CtpBlue,runbordercolor=CtpSky,urlbordercolor=CtpSapphire,%
-		}%
-	}%
+		{{ '}%' }}
+	{{ '}%' }}
 \fi%
 %    \end{macrocode}
 %    \begin{macrocode}
