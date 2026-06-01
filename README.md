@@ -64,7 +64,7 @@ If you want to `catppuccinpalette` can redefine some colors hyperref uses for
 highlighting links according to the catppuccin style guide. For this you only
 need to pass `hyperref=true` to `\usepackage{catppuccinpalette}`. In case you
 want to override some of the default settings of `catppuccinpalette`, you can
-do so using `\hyperref` after `catppuccinpalette` and `hyperref` have been
+do so using `\hypersetup` after `catppuccinpalette` and `hyperref` have been
 loaded.
 
 ### Examples
