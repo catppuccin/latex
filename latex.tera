@@ -5,9 +5,9 @@ whiskers:
 
 packageVersion: 1.2.0
 versionDate:
-    year: 2025
-    month: 07
-    day: 19
+    year: "2025"
+    month: "07"
+    day: "19"
 
 ---
 % \iffalse meta-comment
@@ -21,10 +21,7 @@ versionDate:
 \ProvidesFile{catppuccinpalette.dtx}
 %</driver>
 %<package>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
-%<package>\ProvidesPackage{catppuccinpalette}
-%<*package>
-    [{{versionDate.year}}/{{versionDate.month}}/{{versionDate.day}} v{{ packageVersion }} catppuccin xcolor palette]
-%</package>
+%<package>\ProvidesPackage{catppuccinpalette}[{{versionDate.year}}-{{versionDate.month}}-{{versionDate.day}} v{{ packageVersion }} catppuccin xcolor palette]
 %
 %<*driver>
 \documentclass{ltxdoc}

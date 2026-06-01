@@ -73,7 +73,7 @@ Please refer to the [examples](https://github.com/catppuccin/latex/tree/main/exa
 <details>
 <summary>How to do a new release</summary>
 
-1. adjust the version tag in the `latex.tera` and `beamercolorthemecatppuccin.dtx` files
+1. adjust the version tag in the `latex.tera` and `beamercolorthemecatppuccin.dtx` files. This can also be done automatically by running `l3build tag <version>` (e.g. `l3build tag 1.3.0`)
 2. add the changelog entry also in those two files (I'd say we just skip the entry if for the specific package/file nothing was changed now that we have two packages/files)
 3. run `make whiskers`
 4. PR -> merge -> tag the commit (conforming to `"v*.*.*"` and the release will be created automatically)
