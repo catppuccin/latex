@@ -28,7 +28,7 @@
 %<*driver>
 \ProvidesFile{catppuccinpalette.dtx}
 %</driver>
-%<package>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+%<package>\NeedsTeXFormat{LaTeX2e}[2020/10/01]
 %<package>\ProvidesPackage{catppuccinpalette}[2025-07-19 v1.2.0 catppuccin xcolor palette]
 %
 %<*driver>
@@ -139,8 +139,7 @@
 %   style hyperref according to the style guide\footnote{\url{https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md\#typography}}.
 %   Possible values: \verb|false| (initial), \verb|true| (default)
 %   \newline
-%   \textbf{Note:} in order to make this work, \verb|catppuccinpalette| needs to
-%   be loaded \emph{before} the \verb|hyperref| package.
+%   \textbf{Note:} You can still override the settings performed by \texttt{catppuccinpalette} with \texttt{\textbackslash hypersetup} after both \texttt{catppuccinpalette} and \texttt{hyperref} have been loaded.
 %   \\\midrule
 %   \verb|styleAll| &
 %   shortcut for setting \verb|pagecolor|, \verb|textcolor| and \verb|hyperref|
@@ -768,10 +767,19 @@
 % Style hyerref according to the styleguide\footnote{\url{https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md\#typography}} if the user wants it
 %    \begin{macrocode}
 \ifcatppuccinpalette@hyperref%
-	\PassOptionsToPackage{
-		linkcolor=CtpBlue,citecolor=CtpGreen,filecolor=CtpSky,menucolor=CtpBlue,runcolor=CtpSky,urlcolor=CtpSapphire,%
-		linkbordercolor=CtpBlue,citebordercolor=CtpGreen,filebordercolor=CtpSky,menubordercolor=CtpBlue,runbordercolor=CtpSky,urlbordercolor=CtpSapphire,%
-	}{hyperref}%
+	\AddToHook{package/hyperref/after}{%
+		\hypersetup{%
+			linkcolor=CtpBlue,citecolor=CtpGreen,filecolor=CtpSky,menucolor=CtpBlue,runcolor=CtpSky,urlcolor=CtpSapphire,%
+			linkbordercolor=CtpBlue,citebordercolor=CtpGreen,filebordercolor=CtpSky,menubordercolor=CtpBlue,runbordercolor=CtpSky,urlbordercolor=CtpSapphire,%
+		}%
+	}%
+	\AddToHook{begindocument/before}{%
+		\@ifpackageloaded{hyperref}{}{%
+			\PackageWarning{catppuccinpalette}{
+				'hyperref' was specified as an argument but not loaded.\MessageBreak%
+				No hyperref adjustments performed.%
+			}%
+	}}%
 \fi%
 %    \end{macrocode}
 %    \begin{macrocode}
