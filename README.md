@@ -63,9 +63,9 @@ beamer e.g. via `\usecolortheme[style=Latte, accent=Blue]{catppuccin}`
 If you want to `catppuccinpalette` can redefine some colors hyperref uses for
 highlighting links according to the catppuccin style guide. For this you only
 need to pass `hyperref=true` to `\usepackage{catppuccinpalette}`. In case you
-want to override some of the default settings of `catppuccinpalette`, you need
-to do it like this:
-`\AddToHook{begindocument/before}{\hypersetup{linkcolor=green}}`
+want to override some of the default settings of `catppuccinpalette`, you can
+do so using `\hyperref` after `catppuccinpalette` and `hyperref` have been
+loaded.
 
 ### Examples
 

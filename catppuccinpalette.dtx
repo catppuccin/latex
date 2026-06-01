@@ -139,8 +139,7 @@
 %   style hyperref according to the style guide\footnote{\url{https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md\#typography}}.
 %   Possible values: \verb|false| (initial), \verb|true| (default)
 %   \newline
-%   \textbf{Note:} Setting the \texttt{hyperref} options is deferred until the \texttt{\textbackslash begin\{document\}}.
-%   Thus, if you want to override some of the settings done by this package, you need to do this for example as follows: \verb|\AddToHook{begindocument/before}{\hypersetup{linkcolor=green}}|
+%   \textbf{Note:} You can still override the settings performed by \texttt{catppuccinpalette} with \texttt{\textbackslash hypersetup} after both \texttt{catppuccinpalette} and \texttt{hyperref} have been loaded.
 %   \\\midrule
 %   \verb|styleAll| &
 %   shortcut for setting \verb|pagecolor|, \verb|textcolor| and \verb|hyperref|
@@ -768,16 +767,16 @@
 % Style hyerref according to the styleguide\footnote{\url{https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md\#typography}} if the user wants it
 %    \begin{macrocode}
 \ifcatppuccinpalette@hyperref%
-	\AddToHook{begindocument/before}{%
-		@ifpackageloaded{hyperref}{%
-			\hypersetup{%
-				linkcolor=CtpBlue,citecolor=CtpGreen,filecolor=CtpSky,menucolor=CtpBlue,runcolor=CtpSky,urlcolor=CtpSapphire,%
-				linkbordercolor=CtpBlue,citebordercolor=CtpGreen,filebordercolor=CtpSky,menubordercolor=CtpBlue,runbordercolor=CtpSky,urlbordercolor=CtpSapphire,%
-			}%
-		}{%
-			\PackageWarning{catppuccinpalette}{'hyperref' was specified as an argument but not loaded.\MessageBreak No hyperref adjustments performed.}
+	\AddToHook{package/hyperref/after}{%
+		\hypersetup{%
+			linkcolor=CtpBlue,citecolor=CtpGreen,filecolor=CtpSky,menucolor=CtpBlue,runcolor=CtpSky,urlcolor=CtpSapphire,%
+			linkbordercolor=CtpBlue,citebordercolor=CtpGreen,filebordercolor=CtpSky,menubordercolor=CtpBlue,runbordercolor=CtpSky,urlbordercolor=CtpSapphire,%
 		}%
 	}%
+	\AddToHook{begindocument/before}{%
+		\@ifpackageloaded{hyperref}{}{%
+			\PackageWarning{catppuccinpalette}{'hyperref' was specified as an argument but not loaded.\MessageBreak No hyperref adjustments performed.}
+	}}%
 \fi%
 %    \end{macrocode}
 %    \begin{macrocode}
