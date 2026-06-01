@@ -3,11 +3,11 @@ whiskers:
     version: ^2.5.1
     filename: "catppuccinpalette.dtx"
 
-packageVersion: 1.2.0
+packageVersion: 1.3.0
 versionDate:
-    year: "2025"
-    month: "07"
-    day: "19"
+    year: "2026"
+    month: "06"
+    day: "01"
 
 ---
 % \iffalse meta-comment
@@ -20,8 +20,6 @@ versionDate:
 %<*driver>
 \ProvidesFile{catppuccinpalette.dtx}
 %</driver>
-%<package>\NeedsTeXFormat{LaTeX2e}[2020/10/01]
-%<package>\ProvidesPackage{catppuccinpalette}[{{versionDate.year}}-{{versionDate.month}}-{{versionDate.day}} v{{ packageVersion }} catppuccin xcolor palette]
 %
 %<*driver>
 \documentclass{ltxdoc}
@@ -40,37 +38,19 @@ versionDate:
 %</driver>
 % \fi
 %
-% \CheckSum{111}
-%
-% \CharacterTable
-%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%   Digits        \0\1\2\3\4\5\6\7\8\9
-%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%   Dollar        \$     Percent       \%     Ampersand     \&
-%   Acute accent  \'     Left paren    \(     Right paren   \)
-%   Asterisk      \*     Plus          \+     Comma         \,
-%   Minus         \-     Point         \.     Solidus       \/
-%   Colon         \:     Semicolon     \;     Less than     \<
-%   Equals        \=     Greater than  \>     Question mark \?
-%   Commercial at \@     Left bracket  \[     Backslash     \\
-%   Right bracket \]     Circumflex    \^     Underscore    \_
-%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%   Right brace   \}     Tilde         \~}
-%
-%
 % \changes{v0.0.1}{2024/02/09}{Converted to DTX file}
 % \changes{v1.0.0}{2024/02/27}{First full release}
 % \changes{v1.0.1}{2024/05/19}{Make fit for CTAN}
 % \changes{v1.0.2}{2024/05/19}{Fix colors in documentation}
 % \changes{v1.1.0}{2024/08/13}{Move to / Merge with official catppuccin. Thereby deprecate colors with |Cat| prefix. Subject to removal in the future}
 % \changes{v1.2.0}{2025/07/19}{Add suport for beamer}
+% \changes{v1.3.0}{2025/07/19}{Improve hyperref integration with lthooks and simplify the release workflow}
 %
 % \DoNotIndex{\newcommand,\newenvironment,\color,\colorlet,\def,\fi,\RequirePackage,\ProvidesPackage,\ProcessPgfOptions,\preparecolorset,\pgfkeys,\pagecolor,\newif,\NeedsTeXFormat}
 %
 % \providecommand*\pkg{\textsf}
 % \providecommand*{\url}{\texttt}
-% \GetFileInfo{catppuccinpalette.dtx}
+% \GetFileInfo{catppuccinpalette.sty}
 % \title{The \textsf{catppuccinPalette} package}
 % {{ '\author{Lukas Heindl \\ \url{oss.heindl+latex@protonmail.com} \\ \url{https://github.com/catppuccin/latex}}' }}
 % \date{\fileversion~from \filedate}
@@ -179,7 +159,8 @@ versionDate:
 % \fi
 %
 %    \begin{macrocode}
-\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\NeedsTeXFormat{LaTeX2e}[2020/10/01]
+\ProvidesPackage{catppuccinpalette}[{{versionDate.year}}-{{versionDate.month}}-{{versionDate.day}} v{{ packageVersion }} catppuccin xcolor palette]
 \RequirePackage{pgfopts}
 \RequirePackage{xcolor}
 %    \end{macrocode}
