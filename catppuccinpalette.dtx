@@ -769,9 +769,13 @@
 %    \begin{macrocode}
 \ifcatppuccinpalette@hyperref%
 	\AddToHook{begindocument/before}{%
-		\hypersetup{%
-			linkcolor=CtpBlue,citecolor=CtpGreen,filecolor=CtpSky,menucolor=CtpBlue,runcolor=CtpSky,urlcolor=CtpSapphire,%
-			linkbordercolor=CtpBlue,citebordercolor=CtpGreen,filebordercolor=CtpSky,menubordercolor=CtpBlue,runbordercolor=CtpSky,urlbordercolor=CtpSapphire,%
+		@ifpackageloaded{hyperref}{%
+			\hypersetup{%
+				linkcolor=CtpBlue,citecolor=CtpGreen,filecolor=CtpSky,menucolor=CtpBlue,runcolor=CtpSky,urlcolor=CtpSapphire,%
+				linkbordercolor=CtpBlue,citebordercolor=CtpGreen,filebordercolor=CtpSky,menubordercolor=CtpBlue,runbordercolor=CtpSky,urlbordercolor=CtpSapphire,%
+			}%
+		}{%
+			\PackageWarning{catppuccinpalette}{'hyperref' was specified as an argument but not loaded.\MessageBreak No hyperref adjustments performed.}
 		}%
 	}%
 \fi%
