@@ -28,8 +28,6 @@
 %<*driver>
 \ProvidesFile{beamercolorthemecatppuccin.dtx}
 %</driver>
-%<package>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
-%<package>\ProvidesPackage{beamercolorthemecatppuccin}[2025-07-19 v1.2.0 catppuccin beamer color theme]
 %
 %<*driver>
 \documentclass{ltxdoc}
@@ -47,25 +45,6 @@
 %</driver>
 % \fi
 %
-% \CheckSum{98}
-%
-% \CharacterTable
-%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%   Digits        \0\1\2\3\4\5\6\7\8\9
-%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%   Dollar        \$     Percent       \%     Ampersand     \&
-%   Acute accent  \'     Left paren    \(     Right paren   \)
-%   Asterisk      \*     Plus          \+     Comma         \,
-%   Minus         \-     Point         \.     Solidus       \/
-%   Colon         \:     Semicolon     \;     Less than     \<
-%   Equals        \=     Greater than  \>     Question mark \?
-%   Commercial at \@     Left bracket  \[     Backslash     \\
-%   Right bracket \]     Circumflex    \^     Underscore    \_
-%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%   Right brace   \}     Tilde         \~}
-%
-%
 % \changes{v0.0.1}{2024/02/25}{Converted to DTX file}
 % \changes{v1.0.0}{2024/02/27}{First full release}
 % \changes{v1.2.0}{2025/07/19}{Merge with official catppuccin package}
@@ -73,7 +52,7 @@
 % \DoNotIndex{\newcommand,\newenvironment,\@ifclassloaded,\def,\renewcommand,\RequirePackage,\setbeamercolor,\usebeamercolor,\ProvidesPackage,\DeclareOptionBeamer,\ExecuteOptionsBeamer,\ProcessOptionsBeamer,\mode}
 %
 % \providecommand*{\url}{\texttt}
-% \GetFileInfo{beamercolorthemecatppuccin.dtx}
+% \GetFileInfo{beamercolorthemecatppuccin.sty}
 % \title{The \textsf{beamercolorthemecatppuccin} package}
 % \author{Lukas Heindl \\ \url{oss.heindl+latex@protonmail.com} \\ \url{https://github.com/atticus-sullivan/beamercolorthemecatppuccin}}
 % \date{\fileversion~from \filedate}
@@ -137,6 +116,9 @@
 % \fi
 %
 %    \begin{macrocode}
+\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+\ProvidesPackage{beamercolorthemecatppuccin}[2026-06-01 v1.3.0 catppuccin beamer color theme]
+
 \@ifclassloaded{beamer}{
 \mode<presentation>
 \newif\ifbeamer@catppuccintheme@blacktext
