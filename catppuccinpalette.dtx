@@ -775,7 +775,10 @@
 	}%
 	\AddToHook{begindocument/before}{%
 		\@ifpackageloaded{hyperref}{}{%
-			\PackageWarning{catppuccinpalette}{'hyperref' was specified as an argument but not loaded.\MessageBreak No hyperref adjustments performed.}
+			\PackageWarning{catppuccinpalette}{
+				'hyperref' was specified as an argument but not loaded.\MessageBreak%
+				No hyperref adjustments performed.%
+			}%
 	}}%
 \fi%
 %    \end{macrocode}
